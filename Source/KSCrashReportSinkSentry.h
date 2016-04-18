@@ -5,7 +5,7 @@
 //  Copyright © 2016 Sentry. All rights reserved.
 //
 
-#import <KSCrash/KSCrashReportFilter.h>
+#import "KSCrashReportFilter.h"
 
 /**
  * KSCrash report sink for Sentry.
