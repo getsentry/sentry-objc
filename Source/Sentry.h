@@ -78,7 +78,7 @@
  * @param from Where you are navigating from.
  * @param to Where you are navigating to.
  */
-+ (void) logNavigationFrom:(NSString *)from to:(NSString *)to;
++ (void) logNavigationFrom:(NSString *)from to:(NSString *)to level:(NSString *)level;
 
 /**
  * Log a UI event.
@@ -86,7 +86,7 @@
  * @param type The event type.
  * @param target The target of this event.
  */
-+ (void) logUIEventOfType:(NSString *)type withTarget:(NSString *)target;
++ (void) logUIEventOfType:(NSString *)type withTarget:(NSString *)target level:(NSString *)level;
 
 /** Report a custom, user defined exception.
  *

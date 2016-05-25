@@ -112,15 +112,31 @@ static NSMutableDictionary* userInfo;
     return NO;
 }
 
-+ (void)addBreadcrumbOfType:(NSString *)type withData:(NSDictionary *)data
++ (void)addBreadcrumbOfCategory:(const NSString *)category level:(const NSString *)level message:(const NSString *)message data:(const NSDictionary *)data
 {
+    if(category == nil)
+    {
+        category = @"unknown";
+    }
+
     lastBreadcrumbIndex++;
     NSError *error = nil;
     NSString *path = [NSString stringWithFormat:@"%s%d", breadcrumbFilenameBuffer, lastBreadcrumbIndex];
-    NSDictionary *jsonDict = @{@"type": type,
-                               @"timestamp": [RFC3339DateTool stringFromDate:[NSDate new]],
-                               @"data": data
-                               };
+    NSMutableDictionary *jsonDict = [NSMutableDictionary new];
+    jsonDict[@"timestamp"] = [RFC3339DateTool stringFromDate:[NSDate new]];
+    jsonDict[@"category"] = category;
+    if(level != nil)
+    {
+        jsonDict[@"level"] = level;
+    }
+    if(data != nil)
+    {
+        jsonDict[@"data"] = data;
+    }
+    if(message != nil)
+    {
+        jsonDict[@"message"] = message;
+    }
     NSData *saveData = [NSJSONSerialization dataWithJSONObject:jsonDict options:0 error:&error];
     if(saveData && !error)
     {
@@ -133,7 +149,7 @@ static NSMutableDictionary* userInfo;
     }
 }
 
-+ (void) logNavigationFrom:(NSString *)from to:(NSString *)to
++ (void) logNavigationFrom:(NSString *)from to:(NSString *)to level:(NSString *)level
 {
     NSMutableDictionary *data = [NSMutableDictionary new];
     data[@"to"] = to;
@@ -142,10 +158,10 @@ static NSMutableDictionary* userInfo;
         data[@"from"] = from;
     }
 
-    [Sentry addBreadcrumbOfType:@"navigation" withData:data];
+    [Sentry addBreadcrumbOfCategory:@"navigation" level:level message:nil data:data];
 }
 
-+ (void) logUIEventOfType:(NSString *)type withTarget:(NSString *)target
++ (void) logUIEventOfType:(NSString *)type withTarget:(NSString *)target level:(NSString *)level
 {
     NSMutableDictionary *data = [NSMutableDictionary new];
     data[@"type"] = type;
@@ -154,15 +170,12 @@ static NSMutableDictionary* userInfo;
         data[@"target"] = target;
     }
     
-    [Sentry addBreadcrumbOfType:@"ui_event" withData:data];
+    [Sentry addBreadcrumbOfCategory:@"ui_event" level:level message:nil data:data];
 }
 
 + (void) logMessage:(NSString *)message level:(const NSString *)level
 {
-    [Sentry addBreadcrumbOfType:@"message" withData:@{
-        @"message": message,
-        @"level": level
-    }];
+    [Sentry addBreadcrumbOfCategory:@"log" level:level message:message data:nil];
 }
 
 + (void) logDebug:(NSString *)message

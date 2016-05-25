@@ -104,12 +104,44 @@
     return interface;
 }
 
+- (NSDictionary *)getStackTraceInterface:(NSArray *)reportBacktrace
+{
+    NSMutableArray *frames = [NSMutableArray new];
+    for(NSString *function in reportBacktrace)
+    {
+        [frames addObject:@{@"function": function}];
+    }
+    return @{@"frames": frames};
+}
+
+- (NSArray *)getRuntimeExceptionInterface:(NSDictionary *)report
+{
+    NSDictionary *userReported = [report objectForKeyPath:@"crash/error/user_reported"];
+    if (!userReported)
+    {
+        return nil;
+    }
+
+    NSMutableDictionary *interface = [NSMutableDictionary new];
+
+    interface[@"type"] = userReported[@"name"];
+    interface[@"value"] = [report objectForKeyPath:@"crash/error/reason"];
+    interface[@"stacktrace"] = [self getStackTraceInterface:userReported[@"backtrace"]];
+    
+    return @[interface];
+}
+
 - (NSDictionary *)getInterfaces:(NSDictionary *)report
 {
     NSMutableDictionary *interfaces = [NSMutableDictionary new];
     interfaces[@"user"] = [self getUserInterface:report];
     interfaces[@"applecrashreport"] = [self getAppleCrashReportInterface:report];
     interfaces[@"breadcrumbs"] = [report objectForKeyPath:@"user/breadcrumbs"];
+    NSArray *runtimeExceptions = [self getRuntimeExceptionInterface:report];
+    if (runtimeExceptions)
+    {
+        interfaces[@"runtime_exception"] = runtimeExceptions;
+    }
     return interfaces;
 }
 
