@@ -17,7 +17,7 @@
 static KSCrashInstallationSentry *installation = nil;
 
 static int lastBreadcrumbIndex = 0;
-static char breadcrumbFilenameBuffer[500];
+static char breadcrumbFilenameBuffer[1000];
 static char *breadcrumbFilenameIndexPtr = breadcrumbFilenameBuffer;
 
 static void onCrash(const KSCrashReportWriter* writer)
@@ -44,16 +44,21 @@ static void onCrash(const KSCrashReportWriter* writer)
 static NSMutableDictionary* userInfo;
 
 + (void)installWithDsn:(NSString *)dsn {
-    dsn = [SentryRequest cleanupDSN:dsn];
     static dispatch_once_t onceToken = 0;
     dispatch_once(&onceToken, ^{
-        userInfo = [NSMutableDictionary new];
         installation = [[KSCrashInstallationSentry alloc] init];
-        installation.dsn = dsn;
-        installation.onCrash = onCrash;
-        [Sentry initializeBreadcrumbs];
-        [installation install];
-        [Sentry sendQueuedEvents];
+        if([Sentry initializeBreadcrumbs])
+        {
+            userInfo = [NSMutableDictionary new];
+            installation.dsn = [SentryRequest cleanupDSN:dsn];
+            installation.onCrash = onCrash;
+            [installation install];
+            [Sentry sendQueuedEvents];
+        }
+        else
+        {
+            NSLog(@"Sentry: Error initializing breadcrumbs. Crash logging disabled.");
+        }
     });
 }
 
@@ -89,12 +94,14 @@ static NSMutableDictionary* userInfo;
         NSLog(@"Sentry: Could not locate cache directory path.");
         return NO;
     }
+
     NSString* cachePath = [directories objectAtIndex:0];
     if([cachePath length] == 0)
     {
         NSLog(@"Sentry: Could not locate cache directory path.");
         return NO;
     }
+
     NSString* storePathEnd = [@"Breadcrumbs" stringByAppendingPathComponent:bundleName];
     NSString* storePath = [cachePath stringByAppendingPathComponent:storePathEnd];
     if([storePath length] == 0)
@@ -102,14 +109,16 @@ static NSMutableDictionary* userInfo;
         NSLog(@"Sentry: Could not determine report files path.");
         return NO;
     }
-    if([Sentry ensureDirectoryExists:storePath])
+
+    if(![Sentry ensureDirectoryExists:storePath])
     {
-        NSString* baseFilename = [storePath stringByAppendingPathComponent:@"jsondata."];
-        strcpy(breadcrumbFilenameBuffer, [baseFilename cStringUsingEncoding:NSUTF8StringEncoding]);
-        breadcrumbFilenameIndexPtr = breadcrumbFilenameBuffer + strlen(breadcrumbFilenameBuffer);
-        return YES;
+        return NO;
     }
-    return NO;
+
+    NSString* baseFilename = [storePath stringByAppendingPathComponent:@"breadcrumbjsondata."];
+    strcpy(breadcrumbFilenameBuffer, [baseFilename cStringUsingEncoding:NSUTF8StringEncoding]);
+    breadcrumbFilenameIndexPtr = breadcrumbFilenameBuffer + strlen(breadcrumbFilenameBuffer);
+    return YES;
 }
 
 + (void)addBreadcrumbOfCategory:(const NSString *)category level:(const NSString *)level message:(const NSString *)message data:(const NSDictionary *)data
@@ -119,9 +128,7 @@ static NSMutableDictionary* userInfo;
         category = @"unknown";
     }
 
-    lastBreadcrumbIndex++;
     NSError *error = nil;
-    NSString *path = [NSString stringWithFormat:@"%s%d", breadcrumbFilenameBuffer, lastBreadcrumbIndex];
     NSMutableDictionary *jsonDict = [NSMutableDictionary new];
     jsonDict[@"timestamp"] = [RFC3339DateTool stringFromDate:[NSDate new]];
     jsonDict[@"category"] = category;
@@ -140,12 +147,23 @@ static NSMutableDictionary* userInfo;
     NSData *saveData = [NSJSONSerialization dataWithJSONObject:jsonDict options:0 error:&error];
     if(saveData && !error)
     {
-        [saveData writeToFile:path options:NSDataWritingAtomic error:&error];
-        if(error)
-        {
-            NSLog(@"Sentry: Error writing breadcrumb: %@", error);
-            lastBreadcrumbIndex--;
+        @synchronized (installation) {
+            int nextBreadcrumbIndex = lastBreadcrumbIndex + 1;
+            NSString *path = [NSString stringWithFormat:@"%s%d", breadcrumbFilenameBuffer, nextBreadcrumbIndex];
+            [saveData writeToFile:path options:NSDataWritingAtomic error:&error];
+            if(error)
+            {
+                NSLog(@"Sentry: Error writing breadcrumb: %@", error);
+            }
+            else
+            {
+                lastBreadcrumbIndex = nextBreadcrumbIndex;
+            }
         }
+    }
+    else
+    {
+        NSLog(@"Sentry: Error serializing breadcrumb: %@", error);
     }
 }
 
@@ -219,7 +237,6 @@ static NSMutableDictionary* userInfo;
 
     // If the app didn't terminate, send this crash report.
     [Sentry sendQueuedEvents];
-    lastBreadcrumbIndex = 0;
 }
 
 + (void) sendQueuedEvents
