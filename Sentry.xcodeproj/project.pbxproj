@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4ABC4A52A36BCBDA981B16C3 /* libPods-SentryTVOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD6145E36CC2776880356DF /* libPods-SentryTVOS.a */; };
-		74007E382707F303A2593DD8 /* libPods-Sentry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49E94ED57823D6E64D678691 /* libPods-Sentry.a */; };
-		B5E65D793B199A4A95CA78AE /* libPods-SentryIOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 352B93D3AECDC959C7A54591 /* libPods-SentryIOS.a */; };
-		B8DD5E16DE26D07188C44A0D /* libPods-SentryOSX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7588C6E9BAC4B0DEE2411335 /* libPods-SentryOSX.a */; };
+		2F0903BCED75AF9D9423D523 /* libPods-SentryIOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7BDE44E0DD09DA88029405E /* libPods-SentryIOS.a */; };
+		4C10949D656BC35BBBFF4295 /* libPods-Sentry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B52F0C1E3D4D60111C5298C /* libPods-Sentry.a */; };
+		B8D33D87A70ACAC5E82841C8 /* libPods-SentryOSX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99EBEE0F650B569C912D1141 /* libPods-SentryOSX.a */; };
+		C9C44C1E06BB0430303436F9 /* libPods-SentryTVOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 918CB72C30450D7760CFA306 /* libPods-SentryTVOS.a */; };
 		CB4BFCD91CE51386001390C1 /* KSCrashInstallationSentry.h in Headers */ = {isa = PBXBuildFile; fileRef = CB93E04B1CBD6F50008EF094 /* KSCrashInstallationSentry.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		CB4BFCDA1CE5138E001390C1 /* KSCrashReportSinkSentry.h in Headers */ = {isa = PBXBuildFile; fileRef = CB93E04D1CBD6F50008EF094 /* KSCrashReportSinkSentry.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		CB4BFCDB1CE5138E001390C1 /* SentryRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = CB93E0511CBD6F50008EF094 /* SentryRequest.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -61,17 +61,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		352B93D3AECDC959C7A54591 /* libPods-SentryIOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SentryIOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		49E94ED57823D6E64D678691 /* libPods-Sentry.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sentry.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5122B9D7057B086F6ACC7BB2 /* Pods-SentryOSX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SentryOSX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SentryOSX/Pods-SentryOSX.debug.xcconfig"; sourceTree = "<group>"; };
-		5FD6145E36CC2776880356DF /* libPods-SentryTVOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SentryTVOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		68CC36C2E8572E7F0F065641 /* Pods-Sentry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sentry.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sentry/Pods-Sentry.release.xcconfig"; sourceTree = "<group>"; };
-		6C392FA6EC9C497138AE1036 /* Pods-SentryOSX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SentryOSX.release.xcconfig"; path = "Pods/Target Support Files/Pods-SentryOSX/Pods-SentryOSX.release.xcconfig"; sourceTree = "<group>"; };
-		6DC2DFA594BCC2512F0EC6F0 /* Pods-SentryIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SentryIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SentryIOS/Pods-SentryIOS.debug.xcconfig"; sourceTree = "<group>"; };
-		7588C6E9BAC4B0DEE2411335 /* libPods-SentryOSX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SentryOSX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7FA2268C041FB4828F7FFCD5 /* Pods-SentryTVOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SentryTVOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-SentryTVOS/Pods-SentryTVOS.release.xcconfig"; sourceTree = "<group>"; };
-		9E595B4E7021A7C1EDCB57D8 /* Pods-SentryTVOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SentryTVOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SentryTVOS/Pods-SentryTVOS.debug.xcconfig"; sourceTree = "<group>"; };
-		B5B1EE867A2B9400EBDE3EAD /* Pods-Sentry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sentry.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sentry/Pods-Sentry.debug.xcconfig"; sourceTree = "<group>"; };
+		0B52F0C1E3D4D60111C5298C /* libPods-Sentry.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sentry.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F2946851E2993270680F984 /* Pods-SentryOSX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SentryOSX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SentryOSX/Pods-SentryOSX.debug.xcconfig"; sourceTree = "<group>"; };
+		2453A237B5219284D2D3AB35 /* Pods-SentryIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SentryIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-SentryIOS/Pods-SentryIOS.release.xcconfig"; sourceTree = "<group>"; };
+		2AAB8703C40FE0BAA2E8544C /* Pods-Sentry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sentry.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sentry/Pods-Sentry.debug.xcconfig"; sourceTree = "<group>"; };
+		532B8A9BBB9E1867A101D8DE /* Pods-SentryTVOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SentryTVOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SentryTVOS/Pods-SentryTVOS.debug.xcconfig"; sourceTree = "<group>"; };
+		6369E76186C9D846E0B00DB6 /* Pods-Sentry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sentry.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sentry/Pods-Sentry.release.xcconfig"; sourceTree = "<group>"; };
+		918CB72C30450D7760CFA306 /* libPods-SentryTVOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SentryTVOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		99EBEE0F650B569C912D1141 /* libPods-SentryOSX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SentryOSX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC2F31F4126B54BCF7E6538A /* Pods-SentryTVOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SentryTVOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-SentryTVOS/Pods-SentryTVOS.release.xcconfig"; sourceTree = "<group>"; };
 		CB4BFCCF1CE51355001390C1 /* libSentry.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSentry.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB4BFCE11CE5140D001390C1 /* libPods-SentryIOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-SentryIOS.a"; path = "Pods/../build/Debug-iphoneos/libPods-SentryIOS.a"; sourceTree = "<group>"; };
 		CB93E0281CBD6ECB008EF094 /* SentryIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SentryIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,7 +89,9 @@
 		CB93E0501CBD6F50008EF094 /* Sentry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sentry.m; sourceTree = "<group>"; };
 		CB93E0511CBD6F50008EF094 /* SentryRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SentryRequest.h; sourceTree = "<group>"; };
 		CB93E0521CBD6F50008EF094 /* SentryRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SentryRequest.m; sourceTree = "<group>"; };
-		CE06E1775F416D307E5DEECA /* Pods-SentryIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SentryIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-SentryIOS/Pods-SentryIOS.release.xcconfig"; sourceTree = "<group>"; };
+		E0D4D9F44382CAF327EE2095 /* Pods-SentryOSX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SentryOSX.release.xcconfig"; path = "Pods/Target Support Files/Pods-SentryOSX/Pods-SentryOSX.release.xcconfig"; sourceTree = "<group>"; };
+		E7BDE44E0DD09DA88029405E /* libPods-SentryIOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SentryIOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED965AA7983A21895C38D1BE /* Pods-SentryIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SentryIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SentryIOS/Pods-SentryIOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74007E382707F303A2593DD8 /* libPods-Sentry.a in Frameworks */,
+				4C10949D656BC35BBBFF4295 /* libPods-Sentry.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,7 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5E65D793B199A4A95CA78AE /* libPods-SentryIOS.a in Frameworks */,
+				2F0903BCED75AF9D9423D523 /* libPods-SentryIOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,7 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8DD5E16DE26D07188C44A0D /* libPods-SentryOSX.a in Frameworks */,
+				B8D33D87A70ACAC5E82841C8 /* libPods-SentryOSX.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,13 +123,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4ABC4A52A36BCBDA981B16C3 /* libPods-SentryTVOS.a in Frameworks */,
+				C9C44C1E06BB0430303436F9 /* libPods-SentryTVOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		47D20234359116B06CF59D6A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2AAB8703C40FE0BAA2E8544C /* Pods-Sentry.debug.xcconfig */,
+				6369E76186C9D846E0B00DB6 /* Pods-Sentry.release.xcconfig */,
+				ED965AA7983A21895C38D1BE /* Pods-SentryIOS.debug.xcconfig */,
+				2453A237B5219284D2D3AB35 /* Pods-SentryIOS.release.xcconfig */,
+				1F2946851E2993270680F984 /* Pods-SentryOSX.debug.xcconfig */,
+				E0D4D9F44382CAF327EE2095 /* Pods-SentryOSX.release.xcconfig */,
+				532B8A9BBB9E1867A101D8DE /* Pods-SentryTVOS.debug.xcconfig */,
+				BC2F31F4126B54BCF7E6538A /* Pods-SentryTVOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CB4BFCD01CE51355001390C1 /* Sentry */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,8 +161,8 @@
 				CB93E0431CBD6EE4008EF094 /* SentryTVOS */,
 				CB4BFCD01CE51355001390C1 /* Sentry */,
 				CB93E0191CBD6EAA008EF094 /* Products */,
-				CE4AA77BD3E93508D4D97764 /* Pods */,
 				FF11A6A9908EB1A8DC3CE6B0 /* Frameworks */,
+				47D20234359116B06CF59D6A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -204,29 +219,14 @@
 			path = Source;
 			sourceTree = "<group>";
 		};
-		CE4AA77BD3E93508D4D97764 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				6DC2DFA594BCC2512F0EC6F0 /* Pods-SentryIOS.debug.xcconfig */,
-				CE06E1775F416D307E5DEECA /* Pods-SentryIOS.release.xcconfig */,
-				5122B9D7057B086F6ACC7BB2 /* Pods-SentryOSX.debug.xcconfig */,
-				6C392FA6EC9C497138AE1036 /* Pods-SentryOSX.release.xcconfig */,
-				9E595B4E7021A7C1EDCB57D8 /* Pods-SentryTVOS.debug.xcconfig */,
-				7FA2268C041FB4828F7FFCD5 /* Pods-SentryTVOS.release.xcconfig */,
-				B5B1EE867A2B9400EBDE3EAD /* Pods-Sentry.debug.xcconfig */,
-				68CC36C2E8572E7F0F065641 /* Pods-Sentry.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		FF11A6A9908EB1A8DC3CE6B0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				CB4BFCE11CE5140D001390C1 /* libPods-SentryIOS.a */,
-				352B93D3AECDC959C7A54591 /* libPods-SentryIOS.a */,
-				7588C6E9BAC4B0DEE2411335 /* libPods-SentryOSX.a */,
-				5FD6145E36CC2776880356DF /* libPods-SentryTVOS.a */,
-				49E94ED57823D6E64D678691 /* libPods-Sentry.a */,
+				0B52F0C1E3D4D60111C5298C /* libPods-Sentry.a */,
+				E7BDE44E0DD09DA88029405E /* libPods-SentryIOS.a */,
+				99EBEE0F650B569C912D1141 /* libPods-SentryOSX.a */,
+				918CB72C30450D7760CFA306 /* libPods-SentryTVOS.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -288,12 +288,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CB4BFCD71CE51355001390C1 /* Build configuration list for PBXNativeTarget "Sentry" */;
 			buildPhases = (
-				1DDAD31957119A35ACC5633E /* Check Pods Manifest.lock */,
+				E2EF6D2C9E40E904F5F05169 /* [CP] Check Pods Manifest.lock */,
 				CB4BFCCB1CE51355001390C1 /* Sources */,
 				CB4BFCCC1CE51355001390C1 /* Frameworks */,
 				CB4BFCCD1CE51355001390C1 /* CopyFiles */,
 				CB4BFCD81CE5137E001390C1 /* Headers */,
-				0105417DFD4CFC42E600D0DB /* Copy Pods Resources */,
+				DAFD24CBF198CF85FDD22411 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -308,12 +308,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CB93E02D1CBD6ECB008EF094 /* Build configuration list for PBXNativeTarget "SentryIOS" */;
 			buildPhases = (
-				C5EFB209A79FA00B4A00278C /* Check Pods Manifest.lock */,
+				3950EE087F9098684F781EF5 /* [CP] Check Pods Manifest.lock */,
 				CB93E0231CBD6ECB008EF094 /* Sources */,
 				CB93E0241CBD6ECB008EF094 /* Frameworks */,
 				CB93E0251CBD6ECB008EF094 /* Headers */,
 				CB93E0261CBD6ECB008EF094 /* Resources */,
-				5552979E80AD15502F0E36EA /* Copy Pods Resources */,
+				8BFB8D841960193DD139EDFD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -328,12 +328,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CB93E03A1CBD6ED7008EF094 /* Build configuration list for PBXNativeTarget "SentryOSX" */;
 			buildPhases = (
-				F541F19DB41D31FBCE48B269 /* Check Pods Manifest.lock */,
+				DFB18E69E37B6D0D36AF71C4 /* [CP] Check Pods Manifest.lock */,
 				CB93E0301CBD6ED7008EF094 /* Sources */,
 				CB93E0311CBD6ED7008EF094 /* Frameworks */,
 				CB93E0321CBD6ED7008EF094 /* Headers */,
 				CB93E0331CBD6ED7008EF094 /* Resources */,
-				AEA9D06A72DDB89E768375EE /* Copy Pods Resources */,
+				B8124EECEF3CC4D6A5116DCA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -348,12 +348,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CB93E0471CBD6EE4008EF094 /* Build configuration list for PBXNativeTarget "SentryTVOS" */;
 			buildPhases = (
-				379A289E8D2864BFBF556A09 /* Check Pods Manifest.lock */,
+				E8088275D250932677242D9D /* [CP] Check Pods Manifest.lock */,
 				CB93E03D1CBD6EE4008EF094 /* Sources */,
 				CB93E03E1CBD6EE4008EF094 /* Frameworks */,
 				CB93E03F1CBD6EE4008EF094 /* Headers */,
 				CB93E0401CBD6EE4008EF094 /* Resources */,
-				6D99FA681374CD36F332FD42 /* Copy Pods Resources */,
+				774AFCE562C88AF7E138FB34 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -432,29 +432,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0105417DFD4CFC42E600D0DB /* Copy Pods Resources */ = {
+		3950EE087F9098684F781EF5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sentry/Pods-Sentry-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1DDAD31957119A35ACC5633E /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -462,44 +447,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		379A289E8D2864BFBF556A09 /* Check Pods Manifest.lock */ = {
+		774AFCE562C88AF7E138FB34 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		5552979E80AD15502F0E36EA /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SentryIOS/Pods-SentryIOS-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6D99FA681374CD36F332FD42 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,14 +462,29 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SentryTVOS/Pods-SentryTVOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AEA9D06A72DDB89E768375EE /* Copy Pods Resources */ = {
+		8BFB8D841960193DD139EDFD /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SentryIOS/Pods-SentryIOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8124EECEF3CC4D6A5116DCA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -522,14 +492,29 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SentryOSX/Pods-SentryOSX-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C5EFB209A79FA00B4A00278C /* Check Pods Manifest.lock */ = {
+		DAFD24CBF198CF85FDD22411 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sentry/Pods-Sentry-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DFB18E69E37B6D0D36AF71C4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -537,14 +522,29 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		F541F19DB41D31FBCE48B269 /* Check Pods Manifest.lock */ = {
+		E2EF6D2C9E40E904F5F05169 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E8088275D250932677242D9D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -604,7 +604,7 @@
 /* Begin XCBuildConfiguration section */
 		CB4BFCD51CE51355001390C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B5B1EE867A2B9400EBDE3EAD /* Pods-Sentry.debug.xcconfig */;
+			baseConfigurationReference = 2AAB8703C40FE0BAA2E8544C /* Pods-Sentry.debug.xcconfig */;
 			buildSettings = {
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -621,7 +621,7 @@
 		};
 		CB4BFCD61CE51355001390C1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 68CC36C2E8572E7F0F065641 /* Pods-Sentry.release.xcconfig */;
+			baseConfigurationReference = 6369E76186C9D846E0B00DB6 /* Pods-Sentry.release.xcconfig */;
 			buildSettings = {
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -728,7 +728,7 @@
 		};
 		CB93E02E1CBD6ECB008EF094 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6DC2DFA594BCC2512F0EC6F0 /* Pods-SentryIOS.debug.xcconfig */;
+			baseConfigurationReference = ED965AA7983A21895C38D1BE /* Pods-SentryIOS.debug.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -745,7 +745,7 @@
 		};
 		CB93E02F1CBD6ECB008EF094 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CE06E1775F416D307E5DEECA /* Pods-SentryIOS.release.xcconfig */;
+			baseConfigurationReference = 2453A237B5219284D2D3AB35 /* Pods-SentryIOS.release.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -762,7 +762,7 @@
 		};
 		CB93E03B1CBD6ED7008EF094 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5122B9D7057B086F6ACC7BB2 /* Pods-SentryOSX.debug.xcconfig */;
+			baseConfigurationReference = 1F2946851E2993270680F984 /* Pods-SentryOSX.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -784,7 +784,7 @@
 		};
 		CB93E03C1CBD6ED7008EF094 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6C392FA6EC9C497138AE1036 /* Pods-SentryOSX.release.xcconfig */;
+			baseConfigurationReference = E0D4D9F44382CAF327EE2095 /* Pods-SentryOSX.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -806,7 +806,7 @@
 		};
 		CB93E0481CBD6EE4008EF094 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9E595B4E7021A7C1EDCB57D8 /* Pods-SentryTVOS.debug.xcconfig */;
+			baseConfigurationReference = 532B8A9BBB9E1867A101D8DE /* Pods-SentryTVOS.debug.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -826,7 +826,7 @@
 		};
 		CB93E0491CBD6EE4008EF094 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7FA2268C041FB4828F7FFCD5 /* Pods-SentryTVOS.release.xcconfig */;
+			baseConfigurationReference = BC2F31F4126B54BCF7E6538A /* Pods-SentryTVOS.release.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
