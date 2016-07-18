@@ -11,6 +11,14 @@
 		4C10949D656BC35BBBFF4295 /* libPods-Sentry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B52F0C1E3D4D60111C5298C /* libPods-Sentry.a */; };
 		B8D33D87A70ACAC5E82841C8 /* libPods-SentryOSX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99EBEE0F650B569C912D1141 /* libPods-SentryOSX.a */; };
 		C9C44C1E06BB0430303436F9 /* libPods-SentryTVOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 918CB72C30450D7760CFA306 /* libPods-SentryTVOS.a */; };
+		CB1F0CD21D340672007965BB /* ReportInterpreter.h in Headers */ = {isa = PBXBuildFile; fileRef = CB1F0CD01D340672007965BB /* ReportInterpreter.h */; };
+		CB1F0CD31D340672007965BB /* ReportInterpreter.h in Headers */ = {isa = PBXBuildFile; fileRef = CB1F0CD01D340672007965BB /* ReportInterpreter.h */; };
+		CB1F0CD41D340672007965BB /* ReportInterpreter.h in Headers */ = {isa = PBXBuildFile; fileRef = CB1F0CD01D340672007965BB /* ReportInterpreter.h */; };
+		CB1F0CD51D340672007965BB /* ReportInterpreter.h in Headers */ = {isa = PBXBuildFile; fileRef = CB1F0CD01D340672007965BB /* ReportInterpreter.h */; };
+		CB1F0CD61D340672007965BB /* ReportInterpreter.m in Sources */ = {isa = PBXBuildFile; fileRef = CB1F0CD11D340672007965BB /* ReportInterpreter.m */; };
+		CB1F0CD71D340672007965BB /* ReportInterpreter.m in Sources */ = {isa = PBXBuildFile; fileRef = CB1F0CD11D340672007965BB /* ReportInterpreter.m */; };
+		CB1F0CD81D340672007965BB /* ReportInterpreter.m in Sources */ = {isa = PBXBuildFile; fileRef = CB1F0CD11D340672007965BB /* ReportInterpreter.m */; };
+		CB1F0CD91D340672007965BB /* ReportInterpreter.m in Sources */ = {isa = PBXBuildFile; fileRef = CB1F0CD11D340672007965BB /* ReportInterpreter.m */; };
 		CB4BFCD91CE51386001390C1 /* KSCrashInstallationSentry.h in Headers */ = {isa = PBXBuildFile; fileRef = CB93E04B1CBD6F50008EF094 /* KSCrashInstallationSentry.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		CB4BFCDA1CE5138E001390C1 /* KSCrashReportSinkSentry.h in Headers */ = {isa = PBXBuildFile; fileRef = CB93E04D1CBD6F50008EF094 /* KSCrashReportSinkSentry.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		CB4BFCDB1CE5138E001390C1 /* SentryRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = CB93E0511CBD6F50008EF094 /* SentryRequest.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -70,6 +78,8 @@
 		918CB72C30450D7760CFA306 /* libPods-SentryTVOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SentryTVOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99EBEE0F650B569C912D1141 /* libPods-SentryOSX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SentryOSX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC2F31F4126B54BCF7E6538A /* Pods-SentryTVOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SentryTVOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-SentryTVOS/Pods-SentryTVOS.release.xcconfig"; sourceTree = "<group>"; };
+		CB1F0CD01D340672007965BB /* ReportInterpreter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportInterpreter.h; sourceTree = "<group>"; };
+		CB1F0CD11D340672007965BB /* ReportInterpreter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportInterpreter.m; sourceTree = "<group>"; };
 		CB4BFCCF1CE51355001390C1 /* libSentry.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSentry.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB4BFCE11CE5140D001390C1 /* libPods-SentryIOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-SentryIOS.a"; path = "Pods/../build/Debug-iphoneos/libPods-SentryIOS.a"; sourceTree = "<group>"; };
 		CB93E0281CBD6ECB008EF094 /* SentryIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SentryIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -215,6 +225,8 @@
 				CB93E0501CBD6F50008EF094 /* Sentry.m */,
 				CB93E0511CBD6F50008EF094 /* SentryRequest.h */,
 				CB93E0521CBD6F50008EF094 /* SentryRequest.m */,
+				CB1F0CD01D340672007965BB /* ReportInterpreter.h */,
+				CB1F0CD11D340672007965BB /* ReportInterpreter.m */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -239,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB4BFCDB1CE5138E001390C1 /* SentryRequest.h in Headers */,
+				CB1F0CD51D340672007965BB /* ReportInterpreter.h in Headers */,
 				CB4BFCDA1CE5138E001390C1 /* KSCrashReportSinkSentry.h in Headers */,
 				CB4BFCD91CE51386001390C1 /* KSCrashInstallationSentry.h in Headers */,
 				CB4BFCDC1CE51393001390C1 /* Sentry.h in Headers */,
@@ -250,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB93E0651CBD6F50008EF094 /* SentryRequest.h in Headers */,
+				CB1F0CD21D340672007965BB /* ReportInterpreter.h in Headers */,
 				CB93E02B1CBD6ECB008EF094 /* SentryIOS.h in Headers */,
 				CB93E0591CBD6F50008EF094 /* KSCrashReportSinkSentry.h in Headers */,
 				CB93E0531CBD6F50008EF094 /* KSCrashInstallationSentry.h in Headers */,
@@ -262,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB93E0661CBD6F50008EF094 /* SentryRequest.h in Headers */,
+				CB1F0CD31D340672007965BB /* ReportInterpreter.h in Headers */,
 				CB93E0381CBD6ED7008EF094 /* SentryOSX.h in Headers */,
 				CB93E05A1CBD6F50008EF094 /* KSCrashReportSinkSentry.h in Headers */,
 				CB93E0541CBD6F50008EF094 /* KSCrashInstallationSentry.h in Headers */,
@@ -274,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB93E0671CBD6F50008EF094 /* SentryRequest.h in Headers */,
+				CB1F0CD41D340672007965BB /* ReportInterpreter.h in Headers */,
 				CB93E0451CBD6EE4008EF094 /* SentryTVOS.h in Headers */,
 				CB93E05B1CBD6F50008EF094 /* KSCrashReportSinkSentry.h in Headers */,
 				CB93E0551CBD6F50008EF094 /* KSCrashInstallationSentry.h in Headers */,
@@ -560,6 +576,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB4BFCE01CE5139A001390C1 /* SentryRequest.m in Sources */,
+				CB1F0CD91D340672007965BB /* ReportInterpreter.m in Sources */,
 				CB4BFCDF1CE5139A001390C1 /* Sentry.m in Sources */,
 				CB4BFCDD1CE5139A001390C1 /* KSCrashInstallationSentry.m in Sources */,
 				CB4BFCDE1CE5139A001390C1 /* KSCrashReportSinkSentry.m in Sources */,
@@ -571,6 +588,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB93E0681CBD6F50008EF094 /* SentryRequest.m in Sources */,
+				CB1F0CD61D340672007965BB /* ReportInterpreter.m in Sources */,
 				CB93E0561CBD6F50008EF094 /* KSCrashInstallationSentry.m in Sources */,
 				CB93E0621CBD6F50008EF094 /* Sentry.m in Sources */,
 				CB93E05C1CBD6F50008EF094 /* KSCrashReportSinkSentry.m in Sources */,
@@ -582,6 +600,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB93E0691CBD6F50008EF094 /* SentryRequest.m in Sources */,
+				CB1F0CD71D340672007965BB /* ReportInterpreter.m in Sources */,
 				CB93E0571CBD6F50008EF094 /* KSCrashInstallationSentry.m in Sources */,
 				CB93E0631CBD6F50008EF094 /* Sentry.m in Sources */,
 				CB93E05D1CBD6F50008EF094 /* KSCrashReportSinkSentry.m in Sources */,
@@ -593,6 +612,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB93E06A1CBD6F50008EF094 /* SentryRequest.m in Sources */,
+				CB1F0CD81D340672007965BB /* ReportInterpreter.m in Sources */,
 				CB93E0581CBD6F50008EF094 /* KSCrashInstallationSentry.m in Sources */,
 				CB93E0641CBD6F50008EF094 /* Sentry.m in Sources */,
 				CB93E05E1CBD6F50008EF094 /* KSCrashReportSinkSentry.m in Sources */,

@@ -9,6 +9,7 @@
 #import "SentryRequest.h"
 #import "Container+DeepSearch.h"
 #import "KSReachabilityKSCrash.h"
+#import "ReportInterpreter.h"
 
 #define SENTRY_VERSION @"7"
 #define CLIENT_VERSION @"1.0"
@@ -37,147 +38,50 @@
     return self;
 }
 
-- (BOOL) isCustomReport:(NSDictionary *)report
-{
-    NSString *reportType = [report objectForKeyPath:@"report/type"];
-    return [reportType isEqualToString:@"custom"];
-}
+//- (NSDictionary *)getUserInterface:(NSDictionary *)report
+//{
+//    return [report objectForKeyPath:@"user/sentry_user"];
+//}
+//
+//- (NSArray *)getRuntimeExceptionInterface:(NSDictionary *)report
+//{
+//    NSDictionary *userReported = [report objectForKeyPath:@"crash/error/user_reported"];
+//    if (!userReported)
+//    {
+//        return nil;
+//    }
+//    
+//    NSMutableDictionary *interface = [NSMutableDictionary new];
+//    
+//    interface[@"type"] = userReported[@"name"];
+//    interface[@"value"] = [report objectForKeyPath:@"crash/error/reason"];
+//    interface[@"stacktrace"] = [self getStackTraceInterface:userReported[@"backtrace"]];
+//    
+//    return @[interface];
+//}
 
-- (NSDictionary *)getRequiredAttributes:(NSDictionary *)report
-{
-    NSMutableDictionary *attributes = [NSMutableDictionary new];
-    
-    NSString *message;
-    NSString *level;
-    
-    if([self isCustomReport:report])
-    {
-        message = report[@"message"];
-        level = report[@"level"];
-    }
-    else
-    {
-        message = [report objectForKeyPath:@"crash/error/reason"];
-        level = @"fatal";
-    }
-
-    attributes[@"event_id"] = [[report objectForKeyPath:@"report/id"] stringByReplacingOccurrencesOfString:@"-" withString:@""];
-    attributes[@"timestamp"] = [report objectForKeyPath:@"report/timestamp"];
-    attributes[@"platform"] = @"objc"; // TODO: Use @"system/system_name" ?
-    attributes[@"message"] = message;
-    attributes[@"level"] = level;
-    
-    return attributes;
-}
-
-- (NSDictionary *)getOptionalAttributes:(NSDictionary *)report
-{
-    NSString *unset = nil;
-
-    NSMutableDictionary *attributes = [NSMutableDictionary new];
-
-    attributes[@"logger"] = unset;
-    attributes[@"culprit"] = unset;
-    attributes[@"server_name"] = [report objectForKeyPath:@"system/CFBundleIdentifier"];
-    attributes[@"release"] = [report objectForKeyPath:@"system/CFBundleVersion"];
-    attributes[@"tags"] = [report objectForKeyPath:@"user/tags"];
-    attributes[@"modules"] = unset;
-    attributes[@"extra"] = [report objectForKeyPath:@"user/extra"];
-    attributes[@"fingerprint"] = unset;
-    
-    return attributes;
-}
-
-- (NSDictionary *)getUserInterface:(NSDictionary *)report
-{
-    return [report objectForKeyPath:@"user/sentry_user"];
-}
-
-- (NSArray *)getRuntimeExceptionInterface:(NSDictionary *)report
-{
-    NSDictionary *userReported = [report objectForKeyPath:@"crash/error/user_reported"];
-    if (!userReported)
-    {
-        return nil;
-    }
-    
-    NSMutableDictionary *interface = [NSMutableDictionary new];
-    
-    interface[@"type"] = userReported[@"name"];
-    interface[@"value"] = [report objectForKeyPath:@"crash/error/reason"];
-    interface[@"stacktrace"] = [self getStackTraceInterface:userReported[@"backtrace"]];
-    
-    return @[interface];
-}
-
-- (NSMutableDictionary *)getCrashedThread:(NSDictionary *)report
-{
-    NSArray *threads = [report objectForKeyPath:@"crash/threads"];
-    for(NSMutableDictionary *thread in threads)
-    {
-        if([thread[@"crashed"] isEqual:@1])
-        {
-            return thread;
-        }
-    }
-    return nil;
-}
-
-- (NSDictionary *)getAppleCrashReportInterface:(NSDictionary *)report
-{
-    NSMutableDictionary *interface = [NSMutableDictionary new];
-    
-    interface[@"crash"] = report[@"crash"];
-    
-    NSMutableDictionary *crashedThread = [self getCrashedThread:report];
-    if(crashedThread != nil)
-    {
-        NSArray *runtimeExceptions = [self getRuntimeExceptionInterface:report];
-        if(runtimeExceptions != nil)
-        {
-            crashedThread[@"runtime_exception"] = runtimeExceptions;
-        }
-    }
-    interface[@"binary_images"] = report[@"binary_images"];
-    interface[@"system"] = report[@"system"];
-    
-    return interface;
-}
-
-- (NSDictionary *)getStackTraceInterface:(NSArray *)reportBacktrace
-{
-    NSMutableArray *frames = [NSMutableArray new];
-    for(NSString *function in reportBacktrace)
-    {
-        [frames addObject:@{@"function": function}];
-    }
-    return @{@"frames": frames};
-}
-
-- (NSArray *)getBreadcrumbsInterface:(NSDictionary *)report
-{
-    return [report objectForKeyPath:@"user/breadcrumbs"];
-}
-
-- (NSDictionary *)getInterfaces:(NSDictionary *)report
+- (NSDictionary *)getInterfaces:(ReportInterpreter *)interpreter
 {
     NSMutableDictionary *interfaces = [NSMutableDictionary new];
-    interfaces[@"user"] = [self getUserInterface:report];
-    interfaces[@"applecrashreport"] = [self getAppleCrashReportInterface:report];
-    interfaces[@"breadcrumbs"] = [self getBreadcrumbsInterface:report];
+    interfaces[@"exception"] = interpreter.exceptionInterface;
+    interfaces[@"threads"] = interpreter.threadsInterface;
+    interfaces[@"contexts"] = interpreter.contextsInterface;
+    interfaces[@"breadcrumbs"] = interpreter.breadcrumbsInterface;
+    interfaces[@"debug_meta"] = interpreter.debugInterface;
 
     return interfaces;
 }
 
 - (NSDictionary *)convertReport:(NSDictionary *)report
 {
+    ReportInterpreter *interpreter = [ReportInterpreter interpreterForReport:report];
     NSMutableDictionary *convertedReport = [NSMutableDictionary new];
 
-    [convertedReport addEntriesFromDictionary:[self getRequiredAttributes:report]];
-    if(![self isCustomReport:report])
+    [convertedReport addEntriesFromDictionary:interpreter.requiredAttributes];
+    if(!interpreter.isCustomReport)
     {
-        [convertedReport addEntriesFromDictionary:[self getOptionalAttributes:report]];
-        [convertedReport addEntriesFromDictionary:[self getInterfaces:report]];
+        [convertedReport addEntriesFromDictionary:interpreter.optionalAttributes];
+        [convertedReport addEntriesFromDictionary:[self getInterfaces:interpreter]];
     }
     
     return convertedReport;
