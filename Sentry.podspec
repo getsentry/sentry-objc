@@ -11,5 +11,6 @@ Pod::Spec.new do |s|
   s.osx.deployment_target =  '10.8'
   s.source       = { :git => "git@github.com:getsentry/sentry-objc.git", :tag=>s.version.to_s }
   s.source_files = 'Source/*.{h,m,mm,c}'
-  s.dependency 'KSCrash'
+  s.dependency 'KSCrash/Installations'
+  s.dependency 'KSCrash/RecordingAdvanced'
 end

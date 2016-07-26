@@ -51,12 +51,12 @@
     return self;
 }
 
-inline id safeNil(id value)
+static inline id safeNil(id value)
 {
     return value ?: [NSNull null];
 }
 
-inline NSString *getHexAddress(NSNumber *value)
+static inline NSString *hexAddress(NSNumber *value)
 {
     return [NSString stringWithFormat:@"0x%016llx", value.unsignedLongLongValue];
 }
@@ -67,12 +67,12 @@ inline NSString *getHexAddress(NSNumber *value)
     return [reportType isEqualToString:@"custom"];
 }
 
-- (NSString *)getDeviceName
+- (NSString *)deviceName
 {
     return nil; // TODO
 }
 
-- (NSString *)getFamily
+- (NSString *)family
 {
     NSString *systemName = self.systemContext[@"system_name"];
     NSArray *components = [systemName componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
@@ -81,51 +81,51 @@ inline NSString *getHexAddress(NSNumber *value)
 
 - (BOOL) isRunningOnAMac
 {
-    return [self.systemContext[@"cpu_arch"] isEqualToString:@"x86"];
+    return [self.systemContext[@"cpu_arch"] isEqualToString:@"x86"] && ![self.systemContext[@"build_type"] isEqualToString:@"simulator"];
 }
 
-- (NSString *)getModel
+- (NSString *)model
 {
-    if([self isRunningOnAMac])
+    if(self.isRunningOnAMac)
     {
         return self.systemContext[@"model"];
     }
     return self.systemContext[@"machine"];
 }
 
-- (NSString *)getModelID
+- (NSString *)modelID
 {
-    if([self isRunningOnAMac])
+    if(self.isRunningOnAMac)
     {
         return nil;
     }
     return self.systemContext[@"model"];
 }
 
-- (NSString *)getBatteryLevel
+- (NSString *)batteryLevel
 {
     return nil; // Not recording this yet
 }
 
-- (NSString *)getOrientation
+- (NSString *)orientation
 {
     return nil; // Not recording this yet
 }
 
-- (NSDictionary *)getDeviceContext
+- (NSDictionary *)deviceContext
 {
     NSMutableDictionary *result = [NSMutableDictionary new];
-    result[@"name"] = [self getDeviceName];
-    result[@"family"] = [self getFamily];
-    result[@"model"] = [self getModel];
-    result[@"model_id"] = [self getModelID];
+    result[@"name"] = self.deviceName;
+    result[@"family"] = self.family;
+    result[@"model"] = self.model;
+    result[@"model_id"] = self.modelID;
     result[@"architecture"] = self.systemContext[@"cpu_arch"];
-    result[@"battery_level"] = [self getBatteryLevel];
-    result[@"orientation"] = [self getOrientation];
+    result[@"battery_level"] = self.batteryLevel;
+    result[@"orientation"] = self.orientation;
     return result;
 }
 
-- (NSDictionary *)getOSContext
+- (NSDictionary *)osContext
 {
     NSMutableDictionary *result = [NSMutableDictionary new];
     result[@"name"] = self.systemContext[@"system_name"];
@@ -136,7 +136,7 @@ inline NSString *getHexAddress(NSNumber *value)
     return result;
 }
 
-- (NSDictionary *)getRuntimeContext
+- (NSDictionary *)runtimeContext
 {
     NSMutableDictionary *result = [NSMutableDictionary new];
     result[@"name"] = self.systemContext[@"CFBundleName"];
@@ -144,13 +144,13 @@ inline NSString *getHexAddress(NSNumber *value)
     return result;
 }
 
-- (NSArray *) getRawStackTraceForThreadIndex:(NSInteger)threadIndex
+- (NSArray *) rawStackTraceForThreadIndex:(NSInteger)threadIndex
 {
     NSDictionary *thread = self.threads[threadIndex];
     return thread[@"backtrace"][@"contents"];
 }
 
-- (NSDictionary *)getBinaryImageForAddress:(uintptr_t) address
+- (NSDictionary *)binaryImageForAddress:(uintptr_t) address
 {
     for(NSDictionary *binaryImage in self.binaryImages)
     {
@@ -164,11 +164,11 @@ inline NSString *getHexAddress(NSNumber *value)
     return nil;
 }
 
-- (NSDictionary *)getThreadAtIndex:(NSInteger)threadIndex
+- (NSDictionary *)threadAtIndex:(NSInteger)threadIndex
 {
     NSMutableDictionary *result = [NSMutableDictionary new];
     NSDictionary *thread = self.threads[threadIndex];
-    result[@"stacktrace"] = [self getStackTraceForThreadIndex:threadIndex showRegisters:NO];
+    result[@"stacktrace"] = [self stackTraceForThreadIndex:threadIndex showRegisters:NO];
     result[@"id"] = thread[@"index"];
     result[@"crashed"] = thread[@"crashed"];
     result[@"current"] = thread[@"current_thread"];
@@ -180,19 +180,19 @@ inline NSString *getHexAddress(NSNumber *value)
     return result;
 }
 
-- (NSDictionary *)getStackFrameAtIndex:(NSInteger)frameIndex inThreadIndex:(NSInteger)threadIndex showRegisters:(BOOL)showRegisters
+- (NSDictionary *)stackFrameAtIndex:(NSInteger)frameIndex inThreadIndex:(NSInteger)threadIndex showRegisters:(BOOL)showRegisters
 {
-    NSDictionary *frame = [self getRawStackTraceForThreadIndex:threadIndex][frameIndex];
+    NSDictionary *frame = [self rawStackTraceForThreadIndex:threadIndex][frameIndex];
     uintptr_t instructionAddress = (uintptr_t)[frame[@"instruction_addr"] unsignedLongLongValue];
-    NSDictionary *binaryImage = [self getBinaryImageForAddress:instructionAddress];
+    NSDictionary *binaryImage = [self binaryImageForAddress:instructionAddress];
     BOOL isAppImage = [binaryImage[@"name"] containsString:@"/Bundle/Application/"];
     NSMutableDictionary *result = [NSMutableDictionary new];
     result[@"function"] = frame[@"symbol_name"];
     result[@"package"] = binaryImage[@"name"];
-    result[@"image_addr"] = getHexAddress(binaryImage[@"image_addr"]);
+    result[@"image_addr"] = hexAddress(binaryImage[@"image_addr"]);
     result[@"platform"] = self.platform;
-    result[@"instruction_addr"] = getHexAddress(frame[@"instruction_addr"]);
-    result[@"symbol_addr"] = getHexAddress(frame[@"symbol_addr"]);
+    result[@"instruction_addr"] = hexAddress(frame[@"instruction_addr"]);
+    result[@"symbol_addr"] = hexAddress(frame[@"symbol_addr"]);
     result[@"in_app"] = [NSNumber numberWithBool:isAppImage];
     if(showRegisters)
     {
@@ -201,14 +201,14 @@ inline NSString *getHexAddress(NSNumber *value)
     return result;
 }
 
-- (NSDictionary *)getStackTraceForThreadIndex:(NSInteger)threadIndex showRegisters:(BOOL)showRegisters
+- (NSDictionary *)stackTraceForThreadIndex:(NSInteger)threadIndex showRegisters:(BOOL)showRegisters
 {
-    NSInteger frameCount = [self getRawStackTraceForThreadIndex:threadIndex].count;
-    int skipped = (int)[self.threads[threadIndex][@"backtrace"][@"contents"] integerValue];
+    NSInteger frameCount = [self rawStackTraceForThreadIndex:threadIndex].count;
+    int skipped = (int)[self.threads[threadIndex][@"backtrace"][@"skipped"] integerValue];
     NSMutableArray *frames = [NSMutableArray arrayWithCapacity:frameCount];
     for(NSInteger i = frameCount - 1; i >= 0; i--)
     {
-        [frames addObject:[self getStackFrameAtIndex:i inThreadIndex:threadIndex showRegisters:showRegisters]];
+        [frames addObject:[self stackFrameAtIndex:i inThreadIndex:threadIndex showRegisters:showRegisters]];
     }
     NSMutableDictionary *result = [NSMutableDictionary new];
     result[@"frames"] = frames;
@@ -219,7 +219,7 @@ inline NSString *getHexAddress(NSNumber *value)
     return result;
 }
 
-- (NSArray *)getImages
+- (NSArray *)images
 {
     NSMutableArray *result = [NSMutableArray new];
     for(NSDictionary *sourceImage in self.binaryImages)
@@ -228,9 +228,9 @@ inline NSString *getHexAddress(NSNumber *value)
         image[@"type"] = @"apple";
         image[@"cpu_type"] = sourceImage[@"cpu_type"];
         image[@"cpu_subtype"] = sourceImage[@"cpu_subtype"];
-        image[@"image_addr"] = getHexAddress(sourceImage[@"image_addr"]);
+        image[@"image_addr"] = hexAddress(sourceImage[@"image_addr"]);
         image[@"image_size"] = sourceImage[@"image_size"];
-        image[@"image_vmaddr"] = getHexAddress(sourceImage[@"image_vmaddr"]);
+        image[@"image_vmaddr"] = hexAddress(sourceImage[@"image_vmaddr"]);
         image[@"name"] = sourceImage[@"name"];
         image[@"uuid"] = sourceImage[@"uuid"];
         [result addObject:image];
@@ -238,7 +238,7 @@ inline NSString *getHexAddress(NSNumber *value)
     return result;
 }
 
-- (NSDictionary *)getExceptionInterface
+- (NSDictionary *)exceptionInterface
 {
     NSMutableDictionary *result = [NSMutableDictionary new];
     NSString *type = self.exceptionContext[@"type"];;
@@ -278,49 +278,49 @@ inline NSString *getHexAddress(NSNumber *value)
     result[@"type"] = type;
     result[@"value"] = value;
     result[@"thread_id"] = crashedThread[@"index"];
-    result[@"stacktrace"] = [self getStackTraceForThreadIndex:self.crashedThreadIndex showRegisters:YES];
+    result[@"stacktrace"] = [self stackTraceForThreadIndex:self.crashedThreadIndex showRegisters:YES];
     return result;
 }
 
-- (NSArray *)getThreadsInterface
+- (NSArray *)threadsInterface
 {
     NSMutableArray *result = [NSMutableArray new];
     for(NSInteger threadIndex = 0; threadIndex < self.threads.count; threadIndex++)
     {
-        [result addObject:[self getThreadAtIndex:threadIndex]];
+        [result addObject:[self threadAtIndex:threadIndex]];
     }
     return result;
 }
 
-- (NSDictionary *)getContextsInterface
+- (NSDictionary *)contextsInterface
 {
     NSMutableDictionary *result = [NSMutableDictionary new];
-    result[@"device"] = [self getDeviceContext];
-    result[@"os"] = [self getOSContext];
-    result[@"runtime"] = [self getRuntimeContext];
+    result[@"device"] = self.deviceContext;
+    result[@"os"] = self.osContext;
+    result[@"runtime"] = self.runtimeContext;
     return result;
 }
 
-- (NSDictionary *)getBreadcrumbsInterface
+- (NSDictionary *)breadcrumbsInterface
 {
     return [self.report objectForKeyPath:@"user/breadcrumbs"];
 }
 
-- (NSDictionary *)getDebugInterface
+- (NSDictionary *)debugInterface
 {
     NSMutableDictionary *result = [NSMutableDictionary new];
     // TODO: sdk_info - Do outside?
-    result[@"images"] = [self getImages];
+    result[@"images"] = self.images;
     return result;
 }
 
-- (NSDictionary *)getRequiredAttributes
+- (NSDictionary *)requiredAttributes
 {
     NSMutableDictionary *attributes = [NSMutableDictionary new];
     
     NSString *level;
     
-    if([self isCustomReport])
+    if(self.isCustomReport)
     {
         level = self.report[@"level"];
     }
@@ -337,7 +337,7 @@ inline NSString *getHexAddress(NSNumber *value)
     return attributes;
 }
 
-- (NSDictionary *)getOptionalAttributes
+- (NSDictionary *)optionalAttributes
 {
     NSString *unset = nil;
     
