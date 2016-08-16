@@ -79,26 +79,13 @@ static inline NSString *hexAddress(NSNumber *value)
     return components[0];
 }
 
-- (BOOL) isRunningOnAMac
-{
-    return [self.systemContext[@"cpu_arch"] isEqualToString:@"x86"] && ![self.systemContext[@"build_type"] isEqualToString:@"simulator"];
-}
-
 - (NSString *)model
 {
-    if(self.isRunningOnAMac)
-    {
-        return self.systemContext[@"model"];
-    }
     return self.systemContext[@"machine"];
 }
 
 - (NSString *)modelID
 {
-    if(self.isRunningOnAMac)
-    {
-        return nil;
-    }
     return self.systemContext[@"model"];
 }
 
@@ -203,8 +190,13 @@ static inline NSString *hexAddress(NSNumber *value)
 
 - (NSDictionary *)stackTraceForThreadIndex:(NSInteger)threadIndex showRegisters:(BOOL)showRegisters
 {
-    NSInteger frameCount = [self rawStackTraceForThreadIndex:threadIndex].count;
+    int frameCount = [self rawStackTraceForThreadIndex:threadIndex].count;
     int skipped = (int)[self.threads[threadIndex][@"backtrace"][@"skipped"] integerValue];
+    if(frameCount <= 0)
+    {
+        return nil;
+    }
+
     NSMutableArray *frames = [NSMutableArray arrayWithCapacity:frameCount];
     for(NSInteger i = frameCount - 1; i >= 0; i--)
     {

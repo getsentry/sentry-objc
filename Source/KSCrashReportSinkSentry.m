@@ -38,28 +38,6 @@
     return self;
 }
 
-//- (NSDictionary *)getUserInterface:(NSDictionary *)report
-//{
-//    return [report objectForKeyPath:@"user/sentry_user"];
-//}
-//
-//- (NSArray *)getRuntimeExceptionInterface:(NSDictionary *)report
-//{
-//    NSDictionary *userReported = [report objectForKeyPath:@"crash/error/user_reported"];
-//    if (!userReported)
-//    {
-//        return nil;
-//    }
-//    
-//    NSMutableDictionary *interface = [NSMutableDictionary new];
-//    
-//    interface[@"type"] = userReported[@"name"];
-//    interface[@"value"] = [report objectForKeyPath:@"crash/error/reason"];
-//    interface[@"stacktrace"] = [self getStackTraceInterface:userReported[@"backtrace"]];
-//    
-//    return @[interface];
-//}
-
 - (NSDictionary *)getInterfaces:(ReportInterpreter *)interpreter
 {
     NSMutableDictionary *interfaces = [NSMutableDictionary new];
