@@ -94,7 +94,7 @@
  *
  * @param reason A description of why the exception occurred.
  *
- * @param language A unique language identifier.
+ * @param platform The "platform" field to use when reporting to Sentry.
  *
  * @param lineOfCode A copy of the offending line of code (nil = ignore).
  *
@@ -104,7 +104,7 @@
  */
 + (void) reportUserException:(NSString*) name
                       reason:(NSString*) reason
-                    language:(NSString*) language
+                    platform:(NSString*) platform
                   lineOfCode:(NSString*) lineOfCode
                   stackTrace:(NSArray*) stackTrace
             terminateProgram:(BOOL) terminateProgram;

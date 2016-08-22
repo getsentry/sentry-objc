@@ -223,14 +223,14 @@ static NSMutableDictionary* userInfo;
 
 + (void) reportUserException:(NSString*) name
                       reason:(NSString*) reason
-                    language:(NSString*) language
+                    platform:(NSString*) platform
                   lineOfCode:(NSString*) lineOfCode
                   stackTrace:(NSArray*) stackTrace
             terminateProgram:(BOOL) terminateProgram
 {
     [[KSCrash sharedInstance] reportUserException:name
                                            reason:reason
-                                          language:language
+                                          language:platform
                                        lineOfCode:lineOfCode
                                        stackTrace:stackTrace
                                  terminateProgram:terminateProgram];

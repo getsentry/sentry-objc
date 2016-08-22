@@ -17,13 +17,138 @@
 @property NSDictionary *systemContext;
 @property NSDictionary *reportContext;
 @property NSString *platform;
+
+- (NSDictionary *)stackTraceForThreadIndex:(NSInteger)threadIndex showRegisters:(BOOL)showRegisters;
+- (NSDictionary *)crashedThread;
+
 @end
+
+@interface NSExceptionReportInterpreter : ReportInterpreter
+
+@end
+
+@implementation NSExceptionReportInterpreter
+
+- (NSDictionary *)exceptionInterface
+{
+    NSMutableDictionary *result = [NSMutableDictionary new];
+    result[@"type"] = self.exceptionContext[@"nsexception"][@"name"];
+    result[@"value"] = self.exceptionContext[@"reason"];
+    result[@"thread_id"] = self.crashedThread[@"index"];
+    result[@"stacktrace"] = [self stackTraceForThreadIndex:self.crashedThreadIndex showRegisters:YES];
+    return result;
+}
+
+@end
+
+@interface CPPExceptionReportInterpreter : ReportInterpreter
+
+@end
+
+@implementation CPPExceptionReportInterpreter
+
+- (NSDictionary *)exceptionInterface
+{
+    NSMutableDictionary *result = [NSMutableDictionary new];
+    result[@"type"] = self.exceptionContext[@"cpp_exception"][@"name"];
+    result[@"value"] = self.exceptionContext[@"reason"];
+    result[@"thread_id"] = self.crashedThread[@"index"];
+    result[@"stacktrace"] = [self stackTraceForThreadIndex:self.crashedThreadIndex showRegisters:YES];
+    return result;
+}
+
+@end
+
+@interface MachExceptionReportInterpreter : ReportInterpreter
+
+@end
+
+@implementation MachExceptionReportInterpreter
+
+- (NSDictionary *)exceptionInterface
+{
+    NSMutableDictionary *result = [NSMutableDictionary new];
+    result[@"type"] = self.exceptionContext[@"mach"][@"exception_name"];
+    result[@"value"] = [NSString stringWithFormat:@"Exception %@, Code %@, Subcode %@",
+                        self.exceptionContext[@"mach"][@"exception"],
+                        self.exceptionContext[@"mach"][@"code"],
+                        self.exceptionContext[@"mach"][@"subcode"]];
+    result[@"thread_id"] = self.crashedThread[@"index"];
+    result[@"stacktrace"] = [self stackTraceForThreadIndex:self.crashedThreadIndex showRegisters:YES];
+    return result;
+}
+
+@end
+
+@interface SignalExceptionReportInterpreter : ReportInterpreter
+
+@end
+
+@implementation SignalExceptionReportInterpreter
+
+- (NSDictionary *)exceptionInterface
+{
+    NSMutableDictionary *result = [NSMutableDictionary new];
+    result[@"type"] = self.exceptionContext[@"signal"][@"name"];
+    result[@"value"] = [NSString stringWithFormat:@"Signal %@, Code %@",
+                        self.exceptionContext[@"mach"][@"signal"],
+                        self.exceptionContext[@"mach"][@"code"]];
+    result[@"thread_id"] = self.crashedThread[@"index"];
+    result[@"stacktrace"] = [self stackTraceForThreadIndex:self.crashedThreadIndex showRegisters:YES];
+    return result;
+}
+
+@end
+
+@interface UserExceptionReportInterpreter : ReportInterpreter
+
+@end
+
+@implementation UserExceptionReportInterpreter
+
+- (NSDictionary *)userExceptionStacktrace
+{
+    NSArray *backtrace = self.exceptionContext[@"user_reported"][@"backtrace"];
+    NSMutableArray *stackTrace = [NSMutableArray new];
+    for(int i = backtrace.count - 1; i >= 0; i--)
+    {
+        [stackTrace addObject:backtrace[i]];
+    }
+    return @{@"frames": stackTrace};
+}
+
+- (NSDictionary *)exceptionInterface
+{
+    NSMutableDictionary *result = [NSMutableDictionary new];
+    result[@"type"] = self.exceptionContext[@"user_reported"][@"name"];
+    result[@"value"] = self.exceptionContext[@"reason"];
+    result[@"stacktrace"] = self.userExceptionStacktrace;
+    return result;
+}
+
+@end
+
+static NSDictionary *g_interpreterClasses;
+
 
 @implementation ReportInterpreter
 
 + (instancetype)interpreterForReport:(NSDictionary *)report
 {
-    return [[ReportInterpreter alloc] initWithReport:report];
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        g_interpreterClasses = @{@"nsexception": [NSExceptionReportInterpreter class],
+                                 @"cpp_exception": [CPPExceptionReportInterpreter class],
+                                 @"mach": [MachExceptionReportInterpreter class],
+                                 @"signal": [SignalExceptionReportInterpreter class],
+                                 @"user": [UserExceptionReportInterpreter class],
+                                 };
+    });
+    NSDictionary *crashContext = report[@"crash"];
+    NSDictionary *exceptionContext = crashContext[@"error"];
+    NSString *type = exceptionContext[@"type"];;
+    Class interpreterClass = g_interpreterClasses[type];
+    return [[interpreterClass alloc] initWithReport:report];
 }
 
 - (instancetype)initWithReport:(NSDictionary *)report
@@ -31,7 +156,7 @@
     if((self = [super init]))
     {
         self.report = report;
-        self.platform = @"TODO";
+        self.platform = @"cocoa";
         self.binaryImages = report[@"binary_images"];
         self.systemContext = report[@"system"];
         self.reportContext = report[@"report"];
@@ -211,6 +336,11 @@ static inline NSString *hexAddress(NSNumber *value)
     return result;
 }
 
+- (NSDictionary *)crashedThread
+{
+    return self.threads[self.crashedThreadIndex];
+}
+
 - (NSArray *)images
 {
     NSMutableArray *result = [NSMutableArray new];
@@ -232,46 +362,7 @@ static inline NSString *hexAddress(NSNumber *value)
 
 - (NSDictionary *)exceptionInterface
 {
-    NSMutableDictionary *result = [NSMutableDictionary new];
-    NSString *type = self.exceptionContext[@"type"];;
-    NSString *value = self.exceptionContext[@"reason"];
-    NSDictionary *crashedThread = self.threads[self.crashedThreadIndex];
-
-    if([type isEqualToString:@"nsexception"])
-    {
-        type = self.exceptionContext[@"nsexception"][@"name"];
-    }
-    if([type isEqualToString:@"cpp_exception"])
-    {
-        type = self.exceptionContext[@"cpp_exception"][@"name"];
-    }
-    if([type isEqualToString:@"mach"])
-    {
-        type = self.exceptionContext[@"mach"][@"exception_name"];
-        value = [NSString stringWithFormat:@"Exception %@, Code %@, Subcode %@",
-                 self.exceptionContext[@"mach"][@"exception"],
-                 self.exceptionContext[@"mach"][@"code"],
-                 self.exceptionContext[@"mach"][@"subcode"]];
-    }
-    if([type isEqualToString:@"signal"])
-    {
-        type = self.exceptionContext[@"signal"][@"name"];
-        value = [NSString stringWithFormat:@"Signal %@, Code %@",
-                 self.exceptionContext[@"mach"][@"signal"],
-                 self.exceptionContext[@"mach"][@"code"]];
-    }
-    if([type isEqualToString:@"user"])
-    {
-        type = self.exceptionContext[@"user_reported"][@"name"];
-        // TODO: with custom stack
-        // TODO: also platform field for customs stack
-    }
-
-    result[@"type"] = type;
-    result[@"value"] = value;
-    result[@"thread_id"] = crashedThread[@"index"];
-    result[@"stacktrace"] = [self stackTraceForThreadIndex:self.crashedThreadIndex showRegisters:YES];
-    return result;
+    return nil;
 }
 
 - (NSArray *)threadsInterface
