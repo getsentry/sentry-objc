@@ -298,8 +298,13 @@ static inline NSString *hexAddress(NSNumber *value)
     uintptr_t instructionAddress = (uintptr_t)[frame[@"instruction_addr"] unsignedLongLongValue];
     NSDictionary *binaryImage = [self binaryImageForAddress:instructionAddress];
     BOOL isAppImage = [binaryImage[@"name"] containsString:@"/Bundle/Application/"];
+    NSString *function = frame[@"symbol_name"];
+    if(function == nil)
+    {
+        function = @"<unkown>";
+    }
     NSMutableDictionary *result = [NSMutableDictionary new];
-    result[@"function"] = frame[@"symbol_name"];
+    result[@"function"] = function;
     result[@"package"] = binaryImage[@"name"];
     result[@"image_addr"] = hexAddress(binaryImage[@"image_addr"]);
     result[@"platform"] = self.platform;
