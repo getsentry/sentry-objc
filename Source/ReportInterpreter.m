@@ -20,6 +20,10 @@
 
 - (NSDictionary *)stackTraceForThreadIndex:(NSInteger)threadIndex showRegisters:(BOOL)showRegisters;
 - (NSDictionary *)crashedThread;
+- (NSMutableArray *)stackFramesForThreadIndex:(NSInteger)threadIndex showRegisters:(BOOL)showRegisters;
+- (NSDictionary *)makeExceptionInterfaceWithType:(NSString *)type
+                                           value:(NSString *)value
+                                      stackTrace:(NSDictionary *)stackTrace;
 
 @end
 
@@ -31,12 +35,9 @@
 
 - (NSDictionary *)exceptionInterface
 {
-    NSMutableDictionary *result = [NSMutableDictionary new];
-    result[@"type"] = self.exceptionContext[@"nsexception"][@"name"];
-    result[@"value"] = self.exceptionContext[@"reason"];
-    result[@"thread_id"] = self.crashedThread[@"index"];
-    result[@"stacktrace"] = [self stackTraceForThreadIndex:self.crashedThreadIndex showRegisters:YES];
-    return result;
+    return [self makeExceptionInterfaceWithType:self.exceptionContext[@"nsexception"][@"name"]
+                                          value:self.exceptionContext[@"reason"]
+                                     stackTrace:[self stackTraceForThreadIndex:self.crashedThreadIndex showRegisters:YES]];
 }
 
 @end
@@ -49,12 +50,9 @@
 
 - (NSDictionary *)exceptionInterface
 {
-    NSMutableDictionary *result = [NSMutableDictionary new];
-    result[@"type"] = self.exceptionContext[@"cpp_exception"][@"name"];
-    result[@"value"] = self.exceptionContext[@"reason"];
-    result[@"thread_id"] = self.crashedThread[@"index"];
-    result[@"stacktrace"] = [self stackTraceForThreadIndex:self.crashedThreadIndex showRegisters:YES];
-    return result;
+    return [self makeExceptionInterfaceWithType:self.exceptionContext[@"cpp_exception"][@"name"]
+                                          value:self.exceptionContext[@"reason"]
+                                     stackTrace:[self stackTraceForThreadIndex:self.crashedThreadIndex showRegisters:YES]];
 }
 
 @end
@@ -67,15 +65,12 @@
 
 - (NSDictionary *)exceptionInterface
 {
-    NSMutableDictionary *result = [NSMutableDictionary new];
-    result[@"type"] = self.exceptionContext[@"mach"][@"exception_name"];
-    result[@"value"] = [NSString stringWithFormat:@"Exception %@, Code %@, Subcode %@",
-                        self.exceptionContext[@"mach"][@"exception"],
-                        self.exceptionContext[@"mach"][@"code"],
-                        self.exceptionContext[@"mach"][@"subcode"]];
-    result[@"thread_id"] = self.crashedThread[@"index"];
-    result[@"stacktrace"] = [self stackTraceForThreadIndex:self.crashedThreadIndex showRegisters:YES];
-    return result;
+    return [self makeExceptionInterfaceWithType:self.exceptionContext[@"mach"][@"exception_name"]
+                                          value:[NSString stringWithFormat:@"Exception %@, Code %@, Subcode %@",
+                                                 self.exceptionContext[@"mach"][@"exception"],
+                                                 self.exceptionContext[@"mach"][@"code"],
+                                                 self.exceptionContext[@"mach"][@"subcode"]]
+                                     stackTrace:[self stackTraceForThreadIndex:self.crashedThreadIndex showRegisters:YES]];
 }
 
 @end
@@ -88,14 +83,11 @@
 
 - (NSDictionary *)exceptionInterface
 {
-    NSMutableDictionary *result = [NSMutableDictionary new];
-    result[@"type"] = self.exceptionContext[@"signal"][@"name"];
-    result[@"value"] = [NSString stringWithFormat:@"Signal %@, Code %@",
-                        self.exceptionContext[@"mach"][@"signal"],
-                        self.exceptionContext[@"mach"][@"code"]];
-    result[@"thread_id"] = self.crashedThread[@"index"];
-    result[@"stacktrace"] = [self stackTraceForThreadIndex:self.crashedThreadIndex showRegisters:YES];
-    return result;
+    return [self makeExceptionInterfaceWithType:self.exceptionContext[@"signal"][@"name"]
+                                          value:[NSString stringWithFormat:@"Signal %@, Code %@",
+                                                 self.exceptionContext[@"signal"][@"signal"],
+                                                 self.exceptionContext[@"signal"][@"code"]]
+                                     stackTrace:[self stackTraceForThreadIndex:self.crashedThreadIndex showRegisters:YES]];
 }
 
 @end
@@ -106,24 +98,38 @@
 
 @implementation UserExceptionReportInterpreter
 
-- (NSDictionary *)userExceptionStacktrace
+- (NSMutableArray *)userStacktrace
 {
     NSArray *backtrace = self.exceptionContext[@"user_reported"][@"backtrace"];
     NSMutableArray *stackTrace = [NSMutableArray new];
-    for(int i = backtrace.count - 1; i >= 0; i--)
+    for(int i = (int)backtrace.count - 1; i >= 0; i--)
     {
         [stackTrace addObject:backtrace[i]];
     }
-    return @{@"frames": stackTrace};
+    return stackTrace;
+}
+
+- (NSMutableArray *)systemStacktrace
+{
+    NSArray *stackFrames = [self stackFramesForThreadIndex:self.crashedThreadIndex showRegisters:YES];
+    NSMutableArray *stackTrace = [NSMutableArray new];
+    for(NSDictionary *frame in stackFrames)
+    {
+        NSMutableDictionary *mutableFrame = [frame mutableCopy];
+        mutableFrame[@"in_app"] = @NO;
+        [stackTrace addObject:mutableFrame];
+    }
+    return stackTrace;
 }
 
 - (NSDictionary *)exceptionInterface
 {
-    NSMutableDictionary *result = [NSMutableDictionary new];
-    result[@"type"] = self.exceptionContext[@"user_reported"][@"name"];
-    result[@"value"] = self.exceptionContext[@"reason"];
-    result[@"stacktrace"] = self.userExceptionStacktrace;
-    return result;
+    NSMutableArray *stackTrace = [self userStacktrace];
+    NSArray *systemStackTrace = [self systemStacktrace];
+    [stackTrace addObjectsFromArray:systemStackTrace];
+    return [self makeExceptionInterfaceWithType:self.exceptionContext[@"user_reported"][@"name"]
+                                          value:self.exceptionContext[@"reason"]
+                                     stackTrace:@{@"frames": stackTrace}];
 }
 
 @end
@@ -262,6 +268,12 @@ static inline NSString *hexAddress(NSNumber *value)
     return thread[@"backtrace"][@"contents"];
 }
 
+- (NSDictionary *) registersForThreadIndex:(NSInteger)threadIndex
+{
+    NSDictionary *thread = self.threads[threadIndex];
+    return thread[@"registers"];
+}
+
 - (NSDictionary *)binaryImageForAddress:(uintptr_t) address
 {
     for(NSDictionary *binaryImage in self.binaryImages)
@@ -276,11 +288,14 @@ static inline NSString *hexAddress(NSNumber *value)
     return nil;
 }
 
-- (NSDictionary *)threadAtIndex:(NSInteger)threadIndex
+- (NSDictionary *)threadAtIndex:(NSInteger)threadIndex includeStacktrace:(BOOL)includeStacktrace
 {
     NSMutableDictionary *result = [NSMutableDictionary new];
     NSDictionary *thread = self.threads[threadIndex];
-    result[@"stacktrace"] = [self stackTraceForThreadIndex:threadIndex showRegisters:NO];
+    if(includeStacktrace)
+    {
+        result[@"stacktrace"] = [self stackTraceForThreadIndex:threadIndex showRegisters:NO];
+    }
     result[@"id"] = thread[@"index"];
     result[@"crashed"] = thread[@"crashed"];
     result[@"current"] = thread[@"current_thread"];
@@ -301,7 +316,7 @@ static inline NSString *hexAddress(NSNumber *value)
     NSString *function = frame[@"symbol_name"];
     if(function == nil)
     {
-        function = @"<unkown>";
+        function = @"<redacted>";
     }
     NSMutableDictionary *result = [NSMutableDictionary new];
     result[@"function"] = function;
@@ -313,15 +328,14 @@ static inline NSString *hexAddress(NSNumber *value)
     result[@"in_app"] = [NSNumber numberWithBool:isAppImage];
     if(showRegisters)
     {
-        result[@"vars"] = frame[@"registers"][@"basic"];
+        result[@"vars"] = [self registersForThreadIndex:threadIndex];
     }
     return result;
 }
 
-- (NSDictionary *)stackTraceForThreadIndex:(NSInteger)threadIndex showRegisters:(BOOL)showRegisters
+- (NSMutableArray *)stackFramesForThreadIndex:(NSInteger)threadIndex showRegisters:(BOOL)showRegisters
 {
     int frameCount = [self rawStackTraceForThreadIndex:threadIndex].count;
-    int skipped = (int)[self.threads[threadIndex][@"backtrace"][@"skipped"] integerValue];
     if(frameCount <= 0)
     {
         return nil;
@@ -331,9 +345,21 @@ static inline NSString *hexAddress(NSNumber *value)
     for(NSInteger i = frameCount - 1; i >= 0; i--)
     {
         [frames addObject:[self stackFrameAtIndex:i inThreadIndex:threadIndex showRegisters:showRegisters]];
+        showRegisters = NO;
+    }
+    return frames;
+}
+
+- (NSDictionary *)stackTraceForThreadIndex:(NSInteger)threadIndex showRegisters:(BOOL)showRegisters
+{
+    NSArray *frames = [self stackFramesForThreadIndex:threadIndex showRegisters:showRegisters];
+    if(frames == nil)
+    {
+        return nil;
     }
     NSMutableDictionary *result = [NSMutableDictionary new];
     result[@"frames"] = frames;
+    int skipped = (int)[self.threads[threadIndex][@"backtrace"][@"skipped"] integerValue];
     if(skipped > 0)
     {
         result[@"frames_omitted"] = @[@"1", [NSString stringWithFormat:@"%d", skipped + 1]];
@@ -365,6 +391,18 @@ static inline NSString *hexAddress(NSNumber *value)
     return result;
 }
 
+- (NSDictionary *)makeExceptionInterfaceWithType:(NSString *)type
+                                           value:(NSString *)value
+                                      stackTrace:(NSDictionary *)stackTrace
+{
+    NSMutableDictionary *result = [NSMutableDictionary new];
+    result[@"type"] = type;
+    result[@"value"] = value;
+    result[@"stacktrace"] = stackTrace;
+    result[@"thread_id"] = self.crashedThread[@"index"];
+    return @{@"values": @[result]};
+}
+
 - (NSDictionary *)exceptionInterface
 {
     return nil;
@@ -375,7 +413,8 @@ static inline NSString *hexAddress(NSNumber *value)
     NSMutableArray *result = [NSMutableArray new];
     for(NSInteger threadIndex = 0; threadIndex < self.threads.count; threadIndex++)
     {
-        [result addObject:[self threadAtIndex:threadIndex]];
+        BOOL includeStacktrace = threadIndex != self.crashedThreadIndex;
+        [result addObject:[self threadAtIndex:threadIndex includeStacktrace:includeStacktrace]];
     }
     return result;
 }
