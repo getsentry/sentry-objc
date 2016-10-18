@@ -104,7 +104,7 @@
     NSMutableArray *stackTrace = [NSMutableArray new];
     for(int i = (int)backtrace.count - 1; i >= 0; i--)
     {
-        [stackTrace addObject:backtrace[i]];
+        [stackTrace addObject:backtrace[(NSUInteger)i]];
     }
     return stackTrace;
 }
@@ -174,17 +174,12 @@ static NSDictionary *g_interpreterClasses;
             NSDictionary *thread = self.threads[i];
             if(thread[@"crashed"])
             {
-                self.crashedThreadIndex = i;
+                self.crashedThreadIndex = (NSInteger)i;
                 break;
             }
         }
     }
     return self;
-}
-
-static inline id safeNil(id value)
-{
-    return value ?: [NSNull null];
 }
 
 static inline NSString *hexAddress(NSNumber *value)
@@ -264,13 +259,13 @@ static inline NSString *hexAddress(NSNumber *value)
 
 - (NSArray *) rawStackTraceForThreadIndex:(NSInteger)threadIndex
 {
-    NSDictionary *thread = self.threads[threadIndex];
+    NSDictionary *thread = self.threads[(NSUInteger)threadIndex];
     return thread[@"backtrace"][@"contents"];
 }
 
 - (NSDictionary *) registersForThreadIndex:(NSInteger)threadIndex
 {
-    NSDictionary *thread = self.threads[threadIndex];
+    NSDictionary *thread = self.threads[(NSUInteger)threadIndex];
     return thread[@"registers"];
 }
 
@@ -291,7 +286,7 @@ static inline NSString *hexAddress(NSNumber *value)
 - (NSDictionary *)threadAtIndex:(NSInteger)threadIndex includeStacktrace:(BOOL)includeStacktrace
 {
     NSMutableDictionary *result = [NSMutableDictionary new];
-    NSDictionary *thread = self.threads[threadIndex];
+    NSDictionary *thread = self.threads[(NSUInteger)threadIndex];
     if(includeStacktrace)
     {
         result[@"stacktrace"] = [self stackTraceForThreadIndex:threadIndex showRegisters:NO];
@@ -309,7 +304,7 @@ static inline NSString *hexAddress(NSNumber *value)
 
 - (NSDictionary *)stackFrameAtIndex:(NSInteger)frameIndex inThreadIndex:(NSInteger)threadIndex showRegisters:(BOOL)showRegisters
 {
-    NSDictionary *frame = [self rawStackTraceForThreadIndex:threadIndex][frameIndex];
+    NSDictionary *frame = [self rawStackTraceForThreadIndex:threadIndex][(NSUInteger)frameIndex];
     uintptr_t instructionAddress = (uintptr_t)[frame[@"instruction_addr"] unsignedLongLongValue];
     NSDictionary *binaryImage = [self binaryImageForAddress:instructionAddress];
     BOOL isAppImage = [binaryImage[@"name"] containsString:@"/Bundle/Application/"];
@@ -335,13 +330,13 @@ static inline NSString *hexAddress(NSNumber *value)
 
 - (NSMutableArray *)stackFramesForThreadIndex:(NSInteger)threadIndex showRegisters:(BOOL)showRegisters
 {
-    int frameCount = [self rawStackTraceForThreadIndex:threadIndex].count;
+    int frameCount = (int)[self rawStackTraceForThreadIndex:threadIndex].count;
     if(frameCount <= 0)
     {
         return nil;
     }
 
-    NSMutableArray *frames = [NSMutableArray arrayWithCapacity:frameCount];
+    NSMutableArray *frames = [NSMutableArray arrayWithCapacity:(NSUInteger)frameCount];
     for(NSInteger i = frameCount - 1; i >= 0; i--)
     {
         [frames addObject:[self stackFrameAtIndex:i inThreadIndex:threadIndex showRegisters:showRegisters]];
@@ -359,7 +354,7 @@ static inline NSString *hexAddress(NSNumber *value)
     }
     NSMutableDictionary *result = [NSMutableDictionary new];
     result[@"frames"] = frames;
-    int skipped = (int)[self.threads[threadIndex][@"backtrace"][@"skipped"] integerValue];
+    int skipped = (int)[self.threads[(NSUInteger)threadIndex][@"backtrace"][@"skipped"] integerValue];
     if(skipped > 0)
     {
         result[@"frames_omitted"] = @[@"1", [NSString stringWithFormat:@"%d", skipped + 1]];
@@ -369,7 +364,7 @@ static inline NSString *hexAddress(NSNumber *value)
 
 - (NSDictionary *)crashedThread
 {
-    return self.threads[self.crashedThreadIndex];
+    return self.threads[(NSUInteger)self.crashedThreadIndex];
 }
 
 - (NSArray *)images
@@ -411,7 +406,7 @@ static inline NSString *hexAddress(NSNumber *value)
 - (NSArray *)threadsInterface
 {
     NSMutableArray *result = [NSMutableArray new];
-    for(NSInteger threadIndex = 0; threadIndex < self.threads.count; threadIndex++)
+    for(NSInteger threadIndex = 0; threadIndex < (NSInteger)self.threads.count; threadIndex++)
     {
         BOOL includeStacktrace = threadIndex != self.crashedThreadIndex;
         [result addObject:[self threadAtIndex:threadIndex includeStacktrace:includeStacktrace]];

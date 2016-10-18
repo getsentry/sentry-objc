@@ -116,7 +116,7 @@ static NSMutableDictionary* userInfo;
     }
 
     NSString* baseFilename = [storePath stringByAppendingPathComponent:@"breadcrumbjsondata."];
-    strcpy(breadcrumbFilenameBuffer, [baseFilename cStringUsingEncoding:NSUTF8StringEncoding]);
+    strlcpy(breadcrumbFilenameBuffer, [baseFilename cStringUsingEncoding:NSUTF8StringEncoding], sizeof(breadcrumbFilenameBuffer));
     breadcrumbFilenameIndexPtr = breadcrumbFilenameBuffer + strlen(breadcrumbFilenameBuffer);
     return YES;
 }
