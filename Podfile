@@ -17,3 +17,8 @@ target 'SentryOSX' do
   platform :osx, '10.8'
   pod 'KSCrash', :subspecs => ['Installations', 'RecordingAdvanced']
 end
+
+target 'SentryWatchOS' do
+  platform :watchos, '2.0'
+  pod 'KSCrash', :subspecs => ['Installations', 'RecordingAdvanced']
+end
