@@ -11,7 +11,7 @@
 #import "NSError+SimpleConstructor.h"
 
 #define SENTRY_VERSION @"7"
-#define CLIENT_VERSION @"1.0"
+#define CLIENT_VERSION @"1.1.0"
 
 @interface SentryRequest ()
 
@@ -43,7 +43,7 @@ static NSString *newAuthHeader(NSURL *url)
     NSMutableString *string = [NSMutableString stringWithString:@"Sentry "];
     
     [string appendFormat:@"%@,", newHeaderPart(@"sentry_version", SENTRY_VERSION)];
-    [string appendFormat:@"%@,", newHeaderPart(@"sentry_client", [NSString stringWithFormat:@"raven-objc/%@", CLIENT_VERSION])];
+    [string appendFormat:@"%@,", newHeaderPart(@"sentry_client", [NSString stringWithFormat:@"sentry-objc/%@", CLIENT_VERSION])];
     [string appendFormat:@"%@,", newHeaderPart(@"sentry_timestamp", [NSNumber numberWithInt:(int)[[NSDate date] timeIntervalSince1970]])];
     [string appendFormat:@"%@,", newHeaderPart(@"sentry_key", url.user)];
     [string appendFormat:@"%@,", newHeaderPart(@"sentry_secret", url.password)];
