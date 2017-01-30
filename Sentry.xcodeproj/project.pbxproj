@@ -1,2816 +1,1151 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>0451EDEFEC101CD587AB5FF9</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-SentryWatchOS.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-SentryWatchOS/Pods-SentryWatchOS.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0B52F0C1E3D4D60111C5298C</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods-Sentry.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>1F2946851E2993270680F984</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-SentryOSX.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-SentryOSX/Pods-SentryOSX.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>232621D1333492380853D444</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-SentryWatchOS/Pods-SentryWatchOS-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>2453A237B5219284D2D3AB35</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-SentryIOS.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-SentryIOS/Pods-SentryIOS.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>2AAB8703C40FE0BAA2E8544C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-Sentry.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-Sentry/Pods-Sentry.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>2F0903BCED75AF9D9423D523</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E7BDE44E0DD09DA88029405E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>3950EE087F9098684F781EF5</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>47D20234359116B06CF59D6A</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>2AAB8703C40FE0BAA2E8544C</string>
-				<string>6369E76186C9D846E0B00DB6</string>
-				<string>ED965AA7983A21895C38D1BE</string>
-				<string>2453A237B5219284D2D3AB35</string>
-				<string>1F2946851E2993270680F984</string>
-				<string>E0D4D9F44382CAF327EE2095</string>
-				<string>532B8A9BBB9E1867A101D8DE</string>
-				<string>BC2F31F4126B54BCF7E6538A</string>
-				<string>5C157564D9DBDB001D10B7D3</string>
-				<string>0451EDEFEC101CD587AB5FF9</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>4C10949D656BC35BBBFF4295</key>
-		<dict>
-			<key>fileRef</key>
-			<string>0B52F0C1E3D4D60111C5298C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>4D343EE149EB94D6B04F5238</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods-SentryWatchOS.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>532B8A9BBB9E1867A101D8DE</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-SentryTVOS.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-SentryTVOS/Pods-SentryTVOS.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>54E581762C56EDCB7DCF76C4</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>5C157564D9DBDB001D10B7D3</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-SentryWatchOS.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-SentryWatchOS/Pods-SentryWatchOS.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6369E76186C9D846E0B00DB6</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-Sentry.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-Sentry/Pods-Sentry.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>641ADAD4696C3332C932DCA5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>4D343EE149EB94D6B04F5238</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>774AFCE562C88AF7E138FB34</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-SentryTVOS/Pods-SentryTVOS-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>8BFB8D841960193DD139EDFD</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-SentryIOS/Pods-SentryIOS-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>918CB72C30450D7760CFA306</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods-SentryTVOS.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>99EBEE0F650B569C912D1141</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods-SentryOSX.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>B8124EECEF3CC4D6A5116DCA</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-SentryOSX/Pods-SentryOSX-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>B8D33D87A70ACAC5E82841C8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>99EBEE0F650B569C912D1141</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BC2F31F4126B54BCF7E6538A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-SentryTVOS.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-SentryTVOS/Pods-SentryTVOS.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C9C44C1E06BB0430303436F9</key>
-		<dict>
-			<key>fileRef</key>
-			<string>918CB72C30450D7760CFA306</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CB1F0CD01D340672007965BB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>ReportInterpreter.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CB1F0CD11D340672007965BB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>ReportInterpreter.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CB1F0CD21D340672007965BB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB1F0CD01D340672007965BB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Private</string>
-				</array>
-			</dict>
-		</dict>
-		<key>CB1F0CD31D340672007965BB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB1F0CD01D340672007965BB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Private</string>
-				</array>
-			</dict>
-		</dict>
-		<key>CB1F0CD41D340672007965BB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB1F0CD01D340672007965BB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Private</string>
-				</array>
-			</dict>
-		</dict>
-		<key>CB1F0CD51D340672007965BB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB1F0CD01D340672007965BB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Private</string>
-				</array>
-			</dict>
-		</dict>
-		<key>CB1F0CD61D340672007965BB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB1F0CD11D340672007965BB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CB1F0CD71D340672007965BB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB1F0CD11D340672007965BB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CB1F0CD81D340672007965BB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB1F0CD11D340672007965BB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CB1F0CD91D340672007965BB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB1F0CD11D340672007965BB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CB4BFCCB1CE51355001390C1</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>CB4BFCE01CE5139A001390C1</string>
-				<string>CB1F0CD91D340672007965BB</string>
-				<string>CB4BFCDF1CE5139A001390C1</string>
-				<string>CB4BFCDD1CE5139A001390C1</string>
-				<string>CB4BFCDE1CE5139A001390C1</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>CB4BFCCC1CE51355001390C1</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>4C10949D656BC35BBBFF4295</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>CB4BFCCD1CE51355001390C1</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>dstPath</key>
-			<string>include/$(PRODUCT_NAME)</string>
-			<key>dstSubfolderSpec</key>
-			<string>16</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXCopyFilesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>CB4BFCCE1CE51355001390C1</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>CB4BFCD71CE51355001390C1</string>
-			<key>buildPhases</key>
-			<array>
-				<string>E2EF6D2C9E40E904F5F05169</string>
-				<string>CB4BFCCB1CE51355001390C1</string>
-				<string>CB4BFCCC1CE51355001390C1</string>
-				<string>CB4BFCCD1CE51355001390C1</string>
-				<string>CB4BFCD81CE5137E001390C1</string>
-				<string>DAFD24CBF198CF85FDD22411</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Sentry</string>
-			<key>productName</key>
-			<string>Sentry</string>
-			<key>productReference</key>
-			<string>CB4BFCCF1CE51355001390C1</string>
-			<key>productType</key>
-			<string>com.apple.product-type.library.static</string>
-		</dict>
-		<key>CB4BFCCF1CE51355001390C1</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libSentry.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>CB4BFCD51CE51355001390C1</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>2AAB8703C40FE0BAA2E8544C</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>LIBRARY_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>$(PROJECT_DIR)/build/Debug-iphoneos</string>
-				</array>
-				<key>OTHER_LDFLAGS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>-ObjC</string>
-				</array>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>CB4BFCD61CE51355001390C1</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>6369E76186C9D846E0B00DB6</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>LIBRARY_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>$(PROJECT_DIR)/build/Debug-iphoneos</string>
-				</array>
-				<key>OTHER_LDFLAGS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>-ObjC</string>
-				</array>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>CB4BFCD71CE51355001390C1</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>CB4BFCD51CE51355001390C1</string>
-				<string>CB4BFCD61CE51355001390C1</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>CB4BFCD81CE5137E001390C1</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>CB4BFCDB1CE5138E001390C1</string>
-				<string>CB1F0CD51D340672007965BB</string>
-				<string>CB4BFCDA1CE5138E001390C1</string>
-				<string>CB4BFCD91CE51386001390C1</string>
-				<string>CB4BFCDC1CE51393001390C1</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>CB4BFCD91CE51386001390C1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E04B1CBD6F50008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Private</string>
-				</array>
-			</dict>
-		</dict>
-		<key>CB4BFCDA1CE5138E001390C1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E04D1CBD6F50008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Private</string>
-				</array>
-			</dict>
-		</dict>
-		<key>CB4BFCDB1CE5138E001390C1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E0511CBD6F50008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Private</string>
-				</array>
-			</dict>
-		</dict>
-		<key>CB4BFCDC1CE51393001390C1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E04F1CBD6F50008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>CB4BFCDD1CE5139A001390C1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E04C1CBD6F50008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CB4BFCDE1CE5139A001390C1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E04E1CBD6F50008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CB4BFCDF1CE5139A001390C1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E0501CBD6F50008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CB4BFCE01CE5139A001390C1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E0521CBD6F50008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CB4BFCE11CE5140D001390C1</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>archive.ar</string>
-			<key>name</key>
-			<string>libPods-SentryIOS.a</string>
-			<key>path</key>
-			<string>Pods/../build/Debug-iphoneos/libPods-SentryIOS.a</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CB93E00E1CBD6EAA008EF094</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CB93E04A1CBD6F50008EF094</string>
-				<string>CB93E0291CBD6ECB008EF094</string>
-				<string>CB93E0361CBD6ED7008EF094</string>
-				<string>CB93E0431CBD6EE4008EF094</string>
-				<string>CBF477AF1DB6ECF40065F306</string>
-				<string>CB93E0191CBD6EAA008EF094</string>
-				<string>FF11A6A9908EB1A8DC3CE6B0</string>
-				<string>47D20234359116B06CF59D6A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CB93E00F1CBD6EAA008EF094</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastUpgradeCheck</key>
-				<string>0800</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>Karl Stenerud</string>
-				<key>TargetAttributes</key>
-				<dict>
-					<key>CB4BFCCE1CE51355001390C1</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.3.1</string>
-					</dict>
-					<key>CB93E0271CBD6ECB008EF094</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.3</string>
-					</dict>
-					<key>CB93E0341CBD6ED7008EF094</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.3</string>
-					</dict>
-					<key>CB93E0411CBD6EE4008EF094</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.3</string>
-					</dict>
-					<key>CBF477AD1DB6ECF40065F306</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>8.0</string>
-						<key>ProvisioningStyle</key>
-						<string>Automatic</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>CB93E0121CBD6EAA008EF094</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-			</array>
-			<key>mainGroup</key>
-			<string>CB93E00E1CBD6EAA008EF094</string>
-			<key>productRefGroup</key>
-			<string>CB93E0191CBD6EAA008EF094</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>CB93E0271CBD6ECB008EF094</string>
-				<string>CB93E0341CBD6ED7008EF094</string>
-				<string>CB93E0411CBD6EE4008EF094</string>
-				<string>CBF477AD1DB6ECF40065F306</string>
-				<string>CB4BFCCE1CE51355001390C1</string>
-			</array>
-		</dict>
-		<key>CB93E0121CBD6EAA008EF094</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>CB93E01E1CBD6EAA008EF094</string>
-				<string>CB93E01F1CBD6EAA008EF094</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>CB93E0191CBD6EAA008EF094</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CB93E0281CBD6ECB008EF094</string>
-				<string>CB93E0351CBD6ED7008EF094</string>
-				<string>CB93E0421CBD6EE4008EF094</string>
-				<string>CB4BFCCF1CE51355001390C1</string>
-				<string>CBF477AE1DB6ECF40065F306</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CB93E01E1CBD6EAA008EF094</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ANALYZER_NONNULL</key>
-				<string>YES</string>
-				<key>CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER</key>
-				<string>YES</string>
-				<key>CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND</key>
-				<string>YES</string>
-				<key>CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY</key>
-				<string>YES</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CXX0X_EXTENSIONS</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_IMPLICIT_SIGN_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INFINITE_RECURSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_EXPLICIT_OWNERSHIP_TYPE</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_SUSPICIOUS_MOVE</key>
-				<string>YES</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CLANG_WARN__EXIT_TIME_DESTRUCTORS</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>CURRENT_PROJECT_VERSION</key>
-				<string>1</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>ENABLE_TESTABILITY</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_MISSING_NEWLINE</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_MISSING_PROTOTYPES</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_FOUR_CHARACTER_CONSTANTS</key>
-				<string>YES</string>
-				<key>GCC_WARN_HIDDEN_VIRTUAL_FUNCTIONS</key>
-				<string>YES</string>
-				<key>GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED</key>
-				<string>YES</string>
-				<key>GCC_WARN_NON_VIRTUAL_DESTRUCTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_PEDANTIC</key>
-				<string>YES</string>
-				<key>GCC_WARN_SHADOW</key>
-				<string>YES</string>
-				<key>GCC_WARN_SIGN_COMPARE</key>
-				<string>YES</string>
-				<key>GCC_WARN_STRICT_SELECTOR_MATCH</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNKNOWN_PRAGMAS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_LABEL</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_PARAMETER</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>9.3</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VERSIONING_SYSTEM</key>
-				<string>apple-generic</string>
-				<key>VERSION_INFO_PREFIX</key>
-				<string></string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>CB93E01F1CBD6EAA008EF094</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ANALYZER_NONNULL</key>
-				<string>YES</string>
-				<key>CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER</key>
-				<string>YES</string>
-				<key>CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND</key>
-				<string>YES</string>
-				<key>CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY</key>
-				<string>YES</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CXX0X_EXTENSIONS</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_IMPLICIT_SIGN_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INFINITE_RECURSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_EXPLICIT_OWNERSHIP_TYPE</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_SUSPICIOUS_MOVE</key>
-				<string>YES</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CLANG_WARN__EXIT_TIME_DESTRUCTORS</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>CURRENT_PROJECT_VERSION</key>
-				<string>1</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf-with-dsym</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_MISSING_NEWLINE</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_MISSING_PROTOTYPES</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_FOUR_CHARACTER_CONSTANTS</key>
-				<string>YES</string>
-				<key>GCC_WARN_HIDDEN_VIRTUAL_FUNCTIONS</key>
-				<string>YES</string>
-				<key>GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED</key>
-				<string>YES</string>
-				<key>GCC_WARN_NON_VIRTUAL_DESTRUCTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_PEDANTIC</key>
-				<string>YES</string>
-				<key>GCC_WARN_SHADOW</key>
-				<string>YES</string>
-				<key>GCC_WARN_SIGN_COMPARE</key>
-				<string>YES</string>
-				<key>GCC_WARN_STRICT_SELECTOR_MATCH</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNKNOWN_PRAGMAS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_LABEL</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_PARAMETER</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>9.3</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-				<key>VERSIONING_SYSTEM</key>
-				<string>apple-generic</string>
-				<key>VERSION_INFO_PREFIX</key>
-				<string></string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>CB93E0231CBD6ECB008EF094</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>CB93E0681CBD6F50008EF094</string>
-				<string>CB1F0CD61D340672007965BB</string>
-				<string>CB93E0561CBD6F50008EF094</string>
-				<string>CB93E0621CBD6F50008EF094</string>
-				<string>CB93E05C1CBD6F50008EF094</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>CB93E0241CBD6ECB008EF094</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>2F0903BCED75AF9D9423D523</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>CB93E0251CBD6ECB008EF094</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>CB93E0651CBD6F50008EF094</string>
-				<string>CB1F0CD21D340672007965BB</string>
-				<string>CB93E02B1CBD6ECB008EF094</string>
-				<string>CB93E0591CBD6F50008EF094</string>
-				<string>CB93E0531CBD6F50008EF094</string>
-				<string>CB93E05F1CBD6F50008EF094</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>CB93E0261CBD6ECB008EF094</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>CB93E0271CBD6ECB008EF094</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>CB93E02D1CBD6ECB008EF094</string>
-			<key>buildPhases</key>
-			<array>
-				<string>3950EE087F9098684F781EF5</string>
-				<string>CB93E0231CBD6ECB008EF094</string>
-				<string>CB93E0241CBD6ECB008EF094</string>
-				<string>CB93E0251CBD6ECB008EF094</string>
-				<string>CB93E0261CBD6ECB008EF094</string>
-				<string>8BFB8D841960193DD139EDFD</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>SentryIOS</string>
-			<key>productName</key>
-			<string>SentryIOS</string>
-			<key>productReference</key>
-			<string>CB93E0281CBD6ECB008EF094</string>
-			<key>productType</key>
-			<string>com.apple.product-type.framework</string>
-		</dict>
-		<key>CB93E0281CBD6ECB008EF094</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>SentryIOS.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>CB93E0291CBD6ECB008EF094</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CB93E02A1CBD6ECB008EF094</string>
-				<string>CB93E02C1CBD6ECB008EF094</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>SentryIOS</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CB93E02A1CBD6ECB008EF094</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>SentryIOS.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CB93E02B1CBD6ECB008EF094</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E02A1CBD6ECB008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>CB93E02C1CBD6ECB008EF094</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CB93E02D1CBD6ECB008EF094</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>CB93E02E1CBD6ECB008EF094</string>
-				<string>CB93E02F1CBD6ECB008EF094</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>CB93E02E1CBD6ECB008EF094</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>ED965AA7983A21895C38D1BE</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string></string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>INFOPLIST_FILE</key>
-				<string>SentryIOS/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.getsentry.SentryIOS</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>CB93E02F1CBD6ECB008EF094</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>2453A237B5219284D2D3AB35</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string></string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>INFOPLIST_FILE</key>
-				<string>SentryIOS/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.getsentry.SentryIOS</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>CB93E0301CBD6ED7008EF094</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>CB93E0691CBD6F50008EF094</string>
-				<string>CB1F0CD71D340672007965BB</string>
-				<string>CB93E0571CBD6F50008EF094</string>
-				<string>CB93E0631CBD6F50008EF094</string>
-				<string>CB93E05D1CBD6F50008EF094</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>CB93E0311CBD6ED7008EF094</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>B8D33D87A70ACAC5E82841C8</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>CB93E0321CBD6ED7008EF094</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>CB93E0661CBD6F50008EF094</string>
-				<string>CB1F0CD31D340672007965BB</string>
-				<string>CB93E0381CBD6ED7008EF094</string>
-				<string>CB93E05A1CBD6F50008EF094</string>
-				<string>CB93E0541CBD6F50008EF094</string>
-				<string>CB93E0601CBD6F50008EF094</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>CB93E0331CBD6ED7008EF094</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>CB93E0341CBD6ED7008EF094</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>CB93E03A1CBD6ED7008EF094</string>
-			<key>buildPhases</key>
-			<array>
-				<string>DFB18E69E37B6D0D36AF71C4</string>
-				<string>CB93E0301CBD6ED7008EF094</string>
-				<string>CB93E0311CBD6ED7008EF094</string>
-				<string>CB93E0321CBD6ED7008EF094</string>
-				<string>CB93E0331CBD6ED7008EF094</string>
-				<string>B8124EECEF3CC4D6A5116DCA</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>SentryOSX</string>
-			<key>productName</key>
-			<string>SentryOSX</string>
-			<key>productReference</key>
-			<string>CB93E0351CBD6ED7008EF094</string>
-			<key>productType</key>
-			<string>com.apple.product-type.framework</string>
-		</dict>
-		<key>CB93E0351CBD6ED7008EF094</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>SentryOSX.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>CB93E0361CBD6ED7008EF094</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CB93E0371CBD6ED7008EF094</string>
-				<string>CB93E0391CBD6ED7008EF094</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>SentryOSX</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CB93E0371CBD6ED7008EF094</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>SentryOSX.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CB93E0381CBD6ED7008EF094</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E0371CBD6ED7008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>CB93E0391CBD6ED7008EF094</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CB93E03A1CBD6ED7008EF094</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>CB93E03B1CBD6ED7008EF094</string>
-				<string>CB93E03C1CBD6ED7008EF094</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>CB93E03B1CBD6ED7008EF094</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>1F2946851E2993270680F984</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY</key>
-				<string></string>
-				<key>COMBINE_HIDPI_IMAGES</key>
-				<string>YES</string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>FRAMEWORK_VERSION</key>
-				<string>A</string>
-				<key>INFOPLIST_FILE</key>
-				<string>SentryOSX/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/../Frameworks @loader_path/Frameworks</string>
-				<key>MACOSX_DEPLOYMENT_TARGET</key>
-				<string>10.11</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.getsentry.SentryOSX</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>macosx</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>CB93E03C1CBD6ED7008EF094</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>E0D4D9F44382CAF327EE2095</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY</key>
-				<string></string>
-				<key>COMBINE_HIDPI_IMAGES</key>
-				<string>YES</string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>FRAMEWORK_VERSION</key>
-				<string>A</string>
-				<key>INFOPLIST_FILE</key>
-				<string>SentryOSX/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/../Frameworks @loader_path/Frameworks</string>
-				<key>MACOSX_DEPLOYMENT_TARGET</key>
-				<string>10.11</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.getsentry.SentryOSX</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>macosx</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>CB93E03D1CBD6EE4008EF094</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>CB93E06A1CBD6F50008EF094</string>
-				<string>CB1F0CD81D340672007965BB</string>
-				<string>CB93E0581CBD6F50008EF094</string>
-				<string>CB93E0641CBD6F50008EF094</string>
-				<string>CB93E05E1CBD6F50008EF094</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>CB93E03E1CBD6EE4008EF094</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>C9C44C1E06BB0430303436F9</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>CB93E03F1CBD6EE4008EF094</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>CB93E0671CBD6F50008EF094</string>
-				<string>CB1F0CD41D340672007965BB</string>
-				<string>CB93E0451CBD6EE4008EF094</string>
-				<string>CB93E05B1CBD6F50008EF094</string>
-				<string>CB93E0551CBD6F50008EF094</string>
-				<string>CB93E0611CBD6F50008EF094</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>CB93E0401CBD6EE4008EF094</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>CB93E0411CBD6EE4008EF094</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>CB93E0471CBD6EE4008EF094</string>
-			<key>buildPhases</key>
-			<array>
-				<string>E8088275D250932677242D9D</string>
-				<string>CB93E03D1CBD6EE4008EF094</string>
-				<string>CB93E03E1CBD6EE4008EF094</string>
-				<string>CB93E03F1CBD6EE4008EF094</string>
-				<string>CB93E0401CBD6EE4008EF094</string>
-				<string>774AFCE562C88AF7E138FB34</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>SentryTVOS</string>
-			<key>productName</key>
-			<string>SentryTVOS</string>
-			<key>productReference</key>
-			<string>CB93E0421CBD6EE4008EF094</string>
-			<key>productType</key>
-			<string>com.apple.product-type.framework</string>
-		</dict>
-		<key>CB93E0421CBD6EE4008EF094</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>SentryTVOS.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>CB93E0431CBD6EE4008EF094</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CB93E0441CBD6EE4008EF094</string>
-				<string>CB93E0461CBD6EE4008EF094</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>SentryTVOS</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CB93E0441CBD6EE4008EF094</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>SentryTVOS.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CB93E0451CBD6EE4008EF094</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E0441CBD6EE4008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>CB93E0461CBD6EE4008EF094</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CB93E0471CBD6EE4008EF094</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>CB93E0481CBD6EE4008EF094</string>
-				<string>CB93E0491CBD6EE4008EF094</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>CB93E0481CBD6EE4008EF094</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>532B8A9BBB9E1867A101D8DE</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY[sdk=appletvos*]</key>
-				<string></string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>INFOPLIST_FILE</key>
-				<string>SentryTVOS/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.getsentry.SentryTVOS</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>appletvos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>3</string>
-				<key>TVOS_DEPLOYMENT_TARGET</key>
-				<string>9.2</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>CB93E0491CBD6EE4008EF094</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>BC2F31F4126B54BCF7E6538A</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY[sdk=appletvos*]</key>
-				<string></string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>INFOPLIST_FILE</key>
-				<string>SentryTVOS/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.getsentry.SentryTVOS</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>appletvos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>3</string>
-				<key>TVOS_DEPLOYMENT_TARGET</key>
-				<string>9.2</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>CB93E04A1CBD6F50008EF094</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CB93E04B1CBD6F50008EF094</string>
-				<string>CB93E04C1CBD6F50008EF094</string>
-				<string>CB93E04D1CBD6F50008EF094</string>
-				<string>CB93E04E1CBD6F50008EF094</string>
-				<string>CB93E04F1CBD6F50008EF094</string>
-				<string>CB93E0501CBD6F50008EF094</string>
-				<string>CB93E0511CBD6F50008EF094</string>
-				<string>CB93E0521CBD6F50008EF094</string>
-				<string>CB1F0CD01D340672007965BB</string>
-				<string>CB1F0CD11D340672007965BB</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Source</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CB93E04B1CBD6F50008EF094</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>KSCrashInstallationSentry.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CB93E04C1CBD6F50008EF094</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>KSCrashInstallationSentry.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CB93E04D1CBD6F50008EF094</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>KSCrashReportSinkSentry.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CB93E04E1CBD6F50008EF094</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>KSCrashReportSinkSentry.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CB93E04F1CBD6F50008EF094</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Sentry.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CB93E0501CBD6F50008EF094</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Sentry.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CB93E0511CBD6F50008EF094</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>SentryRequest.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CB93E0521CBD6F50008EF094</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>SentryRequest.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CB93E0531CBD6F50008EF094</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E04B1CBD6F50008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Private</string>
-				</array>
-			</dict>
-		</dict>
-		<key>CB93E0541CBD6F50008EF094</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E04B1CBD6F50008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Private</string>
-				</array>
-			</dict>
-		</dict>
-		<key>CB93E0551CBD6F50008EF094</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E04B1CBD6F50008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Private</string>
-				</array>
-			</dict>
-		</dict>
-		<key>CB93E0561CBD6F50008EF094</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E04C1CBD6F50008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CB93E0571CBD6F50008EF094</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E04C1CBD6F50008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CB93E0581CBD6F50008EF094</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E04C1CBD6F50008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CB93E0591CBD6F50008EF094</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E04D1CBD6F50008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Private</string>
-				</array>
-			</dict>
-		</dict>
-		<key>CB93E05A1CBD6F50008EF094</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E04D1CBD6F50008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Private</string>
-				</array>
-			</dict>
-		</dict>
-		<key>CB93E05B1CBD6F50008EF094</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E04D1CBD6F50008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Private</string>
-				</array>
-			</dict>
-		</dict>
-		<key>CB93E05C1CBD6F50008EF094</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E04E1CBD6F50008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CB93E05D1CBD6F50008EF094</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E04E1CBD6F50008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CB93E05E1CBD6F50008EF094</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E04E1CBD6F50008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CB93E05F1CBD6F50008EF094</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E04F1CBD6F50008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>CB93E0601CBD6F50008EF094</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E04F1CBD6F50008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>CB93E0611CBD6F50008EF094</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E04F1CBD6F50008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>CB93E0621CBD6F50008EF094</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E0501CBD6F50008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CB93E0631CBD6F50008EF094</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E0501CBD6F50008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CB93E0641CBD6F50008EF094</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E0501CBD6F50008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CB93E0651CBD6F50008EF094</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E0511CBD6F50008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Private</string>
-				</array>
-			</dict>
-		</dict>
-		<key>CB93E0661CBD6F50008EF094</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E0511CBD6F50008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Private</string>
-				</array>
-			</dict>
-		</dict>
-		<key>CB93E0671CBD6F50008EF094</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E0511CBD6F50008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Private</string>
-				</array>
-			</dict>
-		</dict>
-		<key>CB93E0681CBD6F50008EF094</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E0521CBD6F50008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CB93E0691CBD6F50008EF094</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E0521CBD6F50008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CB93E06A1CBD6F50008EF094</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E0521CBD6F50008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CBF477A91DB6ECF40065F306</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>CBF477BD1DB6ED640065F306</string>
-				<string>CBF477BF1DB6ED6D0065F306</string>
-				<string>CBF477B61DB6ED440065F306</string>
-				<string>CBF477BB1DB6ED5C0065F306</string>
-				<string>CBF477B91DB6ED530065F306</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>CBF477AA1DB6ECF40065F306</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>641ADAD4696C3332C932DCA5</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>CBF477AB1DB6ECF40065F306</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>CBF477BC1DB6ED5F0065F306</string>
-				<string>CBF477BE1DB6ED670065F306</string>
-				<string>CBF477B21DB6ECF40065F306</string>
-				<string>CBF477B81DB6ED4D0065F306</string>
-				<string>CBF477B71DB6ED470065F306</string>
-				<string>CBF477BA1DB6ED570065F306</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>CBF477AC1DB6ECF40065F306</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>CBF477AD1DB6ECF40065F306</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>CBF477B31DB6ECF40065F306</string>
-			<key>buildPhases</key>
-			<array>
-				<string>54E581762C56EDCB7DCF76C4</string>
-				<string>CBF477A91DB6ECF40065F306</string>
-				<string>CBF477AA1DB6ECF40065F306</string>
-				<string>CBF477AB1DB6ECF40065F306</string>
-				<string>CBF477AC1DB6ECF40065F306</string>
-				<string>232621D1333492380853D444</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>SentryWatchOS</string>
-			<key>productName</key>
-			<string>SentryWatchOS</string>
-			<key>productReference</key>
-			<string>CBF477AE1DB6ECF40065F306</string>
-			<key>productType</key>
-			<string>com.apple.product-type.framework</string>
-		</dict>
-		<key>CBF477AE1DB6ECF40065F306</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>SentryWatchOS.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>CBF477AF1DB6ECF40065F306</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CBF477B01DB6ECF40065F306</string>
-				<string>CBF477B11DB6ECF40065F306</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>SentryWatchOS</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CBF477B01DB6ECF40065F306</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>SentryWatchOS.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CBF477B11DB6ECF40065F306</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CBF477B21DB6ECF40065F306</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CBF477B01DB6ECF40065F306</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>CBF477B31DB6ECF40065F306</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>CBF477B41DB6ECF40065F306</string>
-				<string>CBF477B51DB6ECF40065F306</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>CBF477B41DB6ECF40065F306</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>5C157564D9DBDB001D10B7D3</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>APPLICATION_EXTENSION_API_ONLY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DOCUMENTATION_COMMENTS</key>
-				<string>YES</string>
-				<key>CLANG_WARN_SUSPICIOUS_MOVES</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY</key>
-				<string></string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>INFOPLIST_FILE</key>
-				<string>SentryWatchOS/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.getsentry.SentryWatchOS.SentryWatchOS</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>watchos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>4</string>
-				<key>WATCHOS_DEPLOYMENT_TARGET</key>
-				<string>3.0</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>CBF477B51DB6ECF40065F306</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>0451EDEFEC101CD587AB5FF9</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>APPLICATION_EXTENSION_API_ONLY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DOCUMENTATION_COMMENTS</key>
-				<string>YES</string>
-				<key>CLANG_WARN_SUSPICIOUS_MOVES</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY</key>
-				<string></string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>INFOPLIST_FILE</key>
-				<string>SentryWatchOS/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.getsentry.SentryWatchOS.SentryWatchOS</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>watchos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>4</string>
-				<key>WATCHOS_DEPLOYMENT_TARGET</key>
-				<string>3.0</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>CBF477B61DB6ED440065F306</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E04C1CBD6F50008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CBF477B71DB6ED470065F306</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E04B1CBD6F50008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Private</string>
-				</array>
-			</dict>
-		</dict>
-		<key>CBF477B81DB6ED4D0065F306</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E04D1CBD6F50008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Private</string>
-				</array>
-			</dict>
-		</dict>
-		<key>CBF477B91DB6ED530065F306</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E04E1CBD6F50008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CBF477BA1DB6ED570065F306</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E04F1CBD6F50008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>CBF477BB1DB6ED5C0065F306</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E0501CBD6F50008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CBF477BC1DB6ED5F0065F306</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E0511CBD6F50008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Private</string>
-				</array>
-			</dict>
-		</dict>
-		<key>CBF477BD1DB6ED640065F306</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB93E0521CBD6F50008EF094</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CBF477BE1DB6ED670065F306</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB1F0CD01D340672007965BB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Private</string>
-				</array>
-			</dict>
-		</dict>
-		<key>CBF477BF1DB6ED6D0065F306</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CB1F0CD11D340672007965BB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>DAFD24CBF198CF85FDD22411</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-Sentry/Pods-Sentry-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>DFB18E69E37B6D0D36AF71C4</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>E0D4D9F44382CAF327EE2095</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-SentryOSX.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-SentryOSX/Pods-SentryOSX.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E2EF6D2C9E40E904F5F05169</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>E7BDE44E0DD09DA88029405E</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods-SentryIOS.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>E8088275D250932677242D9D</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>ED965AA7983A21895C38D1BE</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-SentryIOS.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-SentryIOS/Pods-SentryIOS.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>FF11A6A9908EB1A8DC3CE6B0</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CB4BFCE11CE5140D001390C1</string>
-				<string>0B52F0C1E3D4D60111C5298C</string>
-				<string>E7BDE44E0DD09DA88029405E</string>
-				<string>99EBEE0F650B569C912D1141</string>
-				<string>918CB72C30450D7760CFA306</string>
-				<string>4D343EE149EB94D6B04F5238</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>CB93E00F1CBD6EAA008EF094</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2F0903BCED75AF9D9423D523 /* libPods-SentryIOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7BDE44E0DD09DA88029405E /* libPods-SentryIOS.a */; };
+		4C10949D656BC35BBBFF4295 /* libPods-Sentry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B52F0C1E3D4D60111C5298C /* libPods-Sentry.a */; };
+		641ADAD4696C3332C932DCA5 /* libPods-SentryWatchOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D343EE149EB94D6B04F5238 /* libPods-SentryWatchOS.a */; };
+		B8D33D87A70ACAC5E82841C8 /* libPods-SentryOSX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99EBEE0F650B569C912D1141 /* libPods-SentryOSX.a */; };
+		C9C44C1E06BB0430303436F9 /* libPods-SentryTVOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 918CB72C30450D7760CFA306 /* libPods-SentryTVOS.a */; };
+		CB1F0CD21D340672007965BB /* ReportInterpreter.h in Headers */ = {isa = PBXBuildFile; fileRef = CB1F0CD01D340672007965BB /* ReportInterpreter.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		CB1F0CD31D340672007965BB /* ReportInterpreter.h in Headers */ = {isa = PBXBuildFile; fileRef = CB1F0CD01D340672007965BB /* ReportInterpreter.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		CB1F0CD41D340672007965BB /* ReportInterpreter.h in Headers */ = {isa = PBXBuildFile; fileRef = CB1F0CD01D340672007965BB /* ReportInterpreter.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		CB1F0CD51D340672007965BB /* ReportInterpreter.h in Headers */ = {isa = PBXBuildFile; fileRef = CB1F0CD01D340672007965BB /* ReportInterpreter.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		CB1F0CD61D340672007965BB /* ReportInterpreter.m in Sources */ = {isa = PBXBuildFile; fileRef = CB1F0CD11D340672007965BB /* ReportInterpreter.m */; };
+		CB1F0CD71D340672007965BB /* ReportInterpreter.m in Sources */ = {isa = PBXBuildFile; fileRef = CB1F0CD11D340672007965BB /* ReportInterpreter.m */; };
+		CB1F0CD81D340672007965BB /* ReportInterpreter.m in Sources */ = {isa = PBXBuildFile; fileRef = CB1F0CD11D340672007965BB /* ReportInterpreter.m */; };
+		CB1F0CD91D340672007965BB /* ReportInterpreter.m in Sources */ = {isa = PBXBuildFile; fileRef = CB1F0CD11D340672007965BB /* ReportInterpreter.m */; };
+		CB4BFCD91CE51386001390C1 /* KSCrashInstallationSentry.h in Headers */ = {isa = PBXBuildFile; fileRef = CB93E04B1CBD6F50008EF094 /* KSCrashInstallationSentry.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		CB4BFCDA1CE5138E001390C1 /* KSCrashReportSinkSentry.h in Headers */ = {isa = PBXBuildFile; fileRef = CB93E04D1CBD6F50008EF094 /* KSCrashReportSinkSentry.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		CB4BFCDB1CE5138E001390C1 /* SentryRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = CB93E0511CBD6F50008EF094 /* SentryRequest.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		CB4BFCDC1CE51393001390C1 /* Sentry.h in Headers */ = {isa = PBXBuildFile; fileRef = CB93E04F1CBD6F50008EF094 /* Sentry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CB4BFCDD1CE5139A001390C1 /* KSCrashInstallationSentry.m in Sources */ = {isa = PBXBuildFile; fileRef = CB93E04C1CBD6F50008EF094 /* KSCrashInstallationSentry.m */; };
+		CB4BFCDE1CE5139A001390C1 /* KSCrashReportSinkSentry.m in Sources */ = {isa = PBXBuildFile; fileRef = CB93E04E1CBD6F50008EF094 /* KSCrashReportSinkSentry.m */; };
+		CB4BFCDF1CE5139A001390C1 /* Sentry.m in Sources */ = {isa = PBXBuildFile; fileRef = CB93E0501CBD6F50008EF094 /* Sentry.m */; };
+		CB4BFCE01CE5139A001390C1 /* SentryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = CB93E0521CBD6F50008EF094 /* SentryRequest.m */; };
+		CB93E02B1CBD6ECB008EF094 /* SentryIOS.h in Headers */ = {isa = PBXBuildFile; fileRef = CB93E02A1CBD6ECB008EF094 /* SentryIOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CB93E0381CBD6ED7008EF094 /* SentryOSX.h in Headers */ = {isa = PBXBuildFile; fileRef = CB93E0371CBD6ED7008EF094 /* SentryOSX.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CB93E0451CBD6EE4008EF094 /* SentryTVOS.h in Headers */ = {isa = PBXBuildFile; fileRef = CB93E0441CBD6EE4008EF094 /* SentryTVOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CB93E0531CBD6F50008EF094 /* KSCrashInstallationSentry.h in Headers */ = {isa = PBXBuildFile; fileRef = CB93E04B1CBD6F50008EF094 /* KSCrashInstallationSentry.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		CB93E0541CBD6F50008EF094 /* KSCrashInstallationSentry.h in Headers */ = {isa = PBXBuildFile; fileRef = CB93E04B1CBD6F50008EF094 /* KSCrashInstallationSentry.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		CB93E0551CBD6F50008EF094 /* KSCrashInstallationSentry.h in Headers */ = {isa = PBXBuildFile; fileRef = CB93E04B1CBD6F50008EF094 /* KSCrashInstallationSentry.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		CB93E0561CBD6F50008EF094 /* KSCrashInstallationSentry.m in Sources */ = {isa = PBXBuildFile; fileRef = CB93E04C1CBD6F50008EF094 /* KSCrashInstallationSentry.m */; };
+		CB93E0571CBD6F50008EF094 /* KSCrashInstallationSentry.m in Sources */ = {isa = PBXBuildFile; fileRef = CB93E04C1CBD6F50008EF094 /* KSCrashInstallationSentry.m */; };
+		CB93E0581CBD6F50008EF094 /* KSCrashInstallationSentry.m in Sources */ = {isa = PBXBuildFile; fileRef = CB93E04C1CBD6F50008EF094 /* KSCrashInstallationSentry.m */; };
+		CB93E0591CBD6F50008EF094 /* KSCrashReportSinkSentry.h in Headers */ = {isa = PBXBuildFile; fileRef = CB93E04D1CBD6F50008EF094 /* KSCrashReportSinkSentry.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		CB93E05A1CBD6F50008EF094 /* KSCrashReportSinkSentry.h in Headers */ = {isa = PBXBuildFile; fileRef = CB93E04D1CBD6F50008EF094 /* KSCrashReportSinkSentry.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		CB93E05B1CBD6F50008EF094 /* KSCrashReportSinkSentry.h in Headers */ = {isa = PBXBuildFile; fileRef = CB93E04D1CBD6F50008EF094 /* KSCrashReportSinkSentry.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		CB93E05C1CBD6F50008EF094 /* KSCrashReportSinkSentry.m in Sources */ = {isa = PBXBuildFile; fileRef = CB93E04E1CBD6F50008EF094 /* KSCrashReportSinkSentry.m */; };
+		CB93E05D1CBD6F50008EF094 /* KSCrashReportSinkSentry.m in Sources */ = {isa = PBXBuildFile; fileRef = CB93E04E1CBD6F50008EF094 /* KSCrashReportSinkSentry.m */; };
+		CB93E05E1CBD6F50008EF094 /* KSCrashReportSinkSentry.m in Sources */ = {isa = PBXBuildFile; fileRef = CB93E04E1CBD6F50008EF094 /* KSCrashReportSinkSentry.m */; };
+		CB93E05F1CBD6F50008EF094 /* Sentry.h in Headers */ = {isa = PBXBuildFile; fileRef = CB93E04F1CBD6F50008EF094 /* Sentry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CB93E0601CBD6F50008EF094 /* Sentry.h in Headers */ = {isa = PBXBuildFile; fileRef = CB93E04F1CBD6F50008EF094 /* Sentry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CB93E0611CBD6F50008EF094 /* Sentry.h in Headers */ = {isa = PBXBuildFile; fileRef = CB93E04F1CBD6F50008EF094 /* Sentry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CB93E0621CBD6F50008EF094 /* Sentry.m in Sources */ = {isa = PBXBuildFile; fileRef = CB93E0501CBD6F50008EF094 /* Sentry.m */; };
+		CB93E0631CBD6F50008EF094 /* Sentry.m in Sources */ = {isa = PBXBuildFile; fileRef = CB93E0501CBD6F50008EF094 /* Sentry.m */; };
+		CB93E0641CBD6F50008EF094 /* Sentry.m in Sources */ = {isa = PBXBuildFile; fileRef = CB93E0501CBD6F50008EF094 /* Sentry.m */; };
+		CB93E0651CBD6F50008EF094 /* SentryRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = CB93E0511CBD6F50008EF094 /* SentryRequest.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		CB93E0661CBD6F50008EF094 /* SentryRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = CB93E0511CBD6F50008EF094 /* SentryRequest.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		CB93E0671CBD6F50008EF094 /* SentryRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = CB93E0511CBD6F50008EF094 /* SentryRequest.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		CB93E0681CBD6F50008EF094 /* SentryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = CB93E0521CBD6F50008EF094 /* SentryRequest.m */; };
+		CB93E0691CBD6F50008EF094 /* SentryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = CB93E0521CBD6F50008EF094 /* SentryRequest.m */; };
+		CB93E06A1CBD6F50008EF094 /* SentryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = CB93E0521CBD6F50008EF094 /* SentryRequest.m */; };
+		CBF477B21DB6ECF40065F306 /* SentryWatchOS.h in Headers */ = {isa = PBXBuildFile; fileRef = CBF477B01DB6ECF40065F306 /* SentryWatchOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CBF477B61DB6ED440065F306 /* KSCrashInstallationSentry.m in Sources */ = {isa = PBXBuildFile; fileRef = CB93E04C1CBD6F50008EF094 /* KSCrashInstallationSentry.m */; };
+		CBF477B71DB6ED470065F306 /* KSCrashInstallationSentry.h in Headers */ = {isa = PBXBuildFile; fileRef = CB93E04B1CBD6F50008EF094 /* KSCrashInstallationSentry.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		CBF477B81DB6ED4D0065F306 /* KSCrashReportSinkSentry.h in Headers */ = {isa = PBXBuildFile; fileRef = CB93E04D1CBD6F50008EF094 /* KSCrashReportSinkSentry.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		CBF477B91DB6ED530065F306 /* KSCrashReportSinkSentry.m in Sources */ = {isa = PBXBuildFile; fileRef = CB93E04E1CBD6F50008EF094 /* KSCrashReportSinkSentry.m */; };
+		CBF477BA1DB6ED570065F306 /* Sentry.h in Headers */ = {isa = PBXBuildFile; fileRef = CB93E04F1CBD6F50008EF094 /* Sentry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CBF477BB1DB6ED5C0065F306 /* Sentry.m in Sources */ = {isa = PBXBuildFile; fileRef = CB93E0501CBD6F50008EF094 /* Sentry.m */; };
+		CBF477BC1DB6ED5F0065F306 /* SentryRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = CB93E0511CBD6F50008EF094 /* SentryRequest.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		CBF477BD1DB6ED640065F306 /* SentryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = CB93E0521CBD6F50008EF094 /* SentryRequest.m */; };
+		CBF477BE1DB6ED670065F306 /* ReportInterpreter.h in Headers */ = {isa = PBXBuildFile; fileRef = CB1F0CD01D340672007965BB /* ReportInterpreter.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		CBF477BF1DB6ED6D0065F306 /* ReportInterpreter.m in Sources */ = {isa = PBXBuildFile; fileRef = CB1F0CD11D340672007965BB /* ReportInterpreter.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CB4BFCCD1CE51355001390C1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0451EDEFEC101CD587AB5FF9 /* Pods-SentryWatchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SentryWatchOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-SentryWatchOS/Pods-SentryWatchOS.release.xcconfig"; sourceTree = "<group>"; };
+		0B52F0C1E3D4D60111C5298C /* libPods-Sentry.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sentry.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F2946851E2993270680F984 /* Pods-SentryOSX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SentryOSX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SentryOSX/Pods-SentryOSX.debug.xcconfig"; sourceTree = "<group>"; };
+		2453A237B5219284D2D3AB35 /* Pods-SentryIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SentryIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-SentryIOS/Pods-SentryIOS.release.xcconfig"; sourceTree = "<group>"; };
+		2AAB8703C40FE0BAA2E8544C /* Pods-Sentry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sentry.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sentry/Pods-Sentry.debug.xcconfig"; sourceTree = "<group>"; };
+		4D343EE149EB94D6B04F5238 /* libPods-SentryWatchOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SentryWatchOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		532B8A9BBB9E1867A101D8DE /* Pods-SentryTVOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SentryTVOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SentryTVOS/Pods-SentryTVOS.debug.xcconfig"; sourceTree = "<group>"; };
+		5C157564D9DBDB001D10B7D3 /* Pods-SentryWatchOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SentryWatchOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SentryWatchOS/Pods-SentryWatchOS.debug.xcconfig"; sourceTree = "<group>"; };
+		6369E76186C9D846E0B00DB6 /* Pods-Sentry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sentry.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sentry/Pods-Sentry.release.xcconfig"; sourceTree = "<group>"; };
+		918CB72C30450D7760CFA306 /* libPods-SentryTVOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SentryTVOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		99EBEE0F650B569C912D1141 /* libPods-SentryOSX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SentryOSX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC2F31F4126B54BCF7E6538A /* Pods-SentryTVOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SentryTVOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-SentryTVOS/Pods-SentryTVOS.release.xcconfig"; sourceTree = "<group>"; };
+		CB1F0CD01D340672007965BB /* ReportInterpreter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportInterpreter.h; sourceTree = "<group>"; };
+		CB1F0CD11D340672007965BB /* ReportInterpreter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportInterpreter.m; sourceTree = "<group>"; };
+		CB4BFCCF1CE51355001390C1 /* libSentry.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSentry.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB4BFCE11CE5140D001390C1 /* libPods-SentryIOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-SentryIOS.a"; path = "Pods/../build/Debug-iphoneos/libPods-SentryIOS.a"; sourceTree = "<group>"; };
+		CB93E0281CBD6ECB008EF094 /* SentryIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SentryIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB93E02A1CBD6ECB008EF094 /* SentryIOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SentryIOS.h; sourceTree = "<group>"; };
+		CB93E02C1CBD6ECB008EF094 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB93E0351CBD6ED7008EF094 /* SentryOSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SentryOSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB93E0371CBD6ED7008EF094 /* SentryOSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SentryOSX.h; sourceTree = "<group>"; };
+		CB93E0391CBD6ED7008EF094 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB93E0421CBD6EE4008EF094 /* SentryTVOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SentryTVOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB93E0441CBD6EE4008EF094 /* SentryTVOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SentryTVOS.h; sourceTree = "<group>"; };
+		CB93E0461CBD6EE4008EF094 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB93E04B1CBD6F50008EF094 /* KSCrashInstallationSentry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCrashInstallationSentry.h; sourceTree = "<group>"; };
+		CB93E04C1CBD6F50008EF094 /* KSCrashInstallationSentry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSCrashInstallationSentry.m; sourceTree = "<group>"; };
+		CB93E04D1CBD6F50008EF094 /* KSCrashReportSinkSentry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCrashReportSinkSentry.h; sourceTree = "<group>"; };
+		CB93E04E1CBD6F50008EF094 /* KSCrashReportSinkSentry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSCrashReportSinkSentry.m; sourceTree = "<group>"; };
+		CB93E04F1CBD6F50008EF094 /* Sentry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sentry.h; sourceTree = "<group>"; };
+		CB93E0501CBD6F50008EF094 /* Sentry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sentry.m; sourceTree = "<group>"; };
+		CB93E0511CBD6F50008EF094 /* SentryRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SentryRequest.h; sourceTree = "<group>"; };
+		CB93E0521CBD6F50008EF094 /* SentryRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SentryRequest.m; sourceTree = "<group>"; };
+		CBF477AE1DB6ECF40065F306 /* SentryWatchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SentryWatchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBF477B01DB6ECF40065F306 /* SentryWatchOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SentryWatchOS.h; sourceTree = "<group>"; };
+		CBF477B11DB6ECF40065F306 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0D4D9F44382CAF327EE2095 /* Pods-SentryOSX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SentryOSX.release.xcconfig"; path = "Pods/Target Support Files/Pods-SentryOSX/Pods-SentryOSX.release.xcconfig"; sourceTree = "<group>"; };
+		E7BDE44E0DD09DA88029405E /* libPods-SentryIOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SentryIOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED965AA7983A21895C38D1BE /* Pods-SentryIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SentryIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SentryIOS/Pods-SentryIOS.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CB4BFCCC1CE51355001390C1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C10949D656BC35BBBFF4295 /* libPods-Sentry.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB93E0241CBD6ECB008EF094 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F0903BCED75AF9D9423D523 /* libPods-SentryIOS.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB93E0311CBD6ED7008EF094 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8D33D87A70ACAC5E82841C8 /* libPods-SentryOSX.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB93E03E1CBD6EE4008EF094 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9C44C1E06BB0430303436F9 /* libPods-SentryTVOS.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBF477AA1DB6ECF40065F306 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				641ADAD4696C3332C932DCA5 /* libPods-SentryWatchOS.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		47D20234359116B06CF59D6A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2AAB8703C40FE0BAA2E8544C /* Pods-Sentry.debug.xcconfig */,
+				6369E76186C9D846E0B00DB6 /* Pods-Sentry.release.xcconfig */,
+				ED965AA7983A21895C38D1BE /* Pods-SentryIOS.debug.xcconfig */,
+				2453A237B5219284D2D3AB35 /* Pods-SentryIOS.release.xcconfig */,
+				1F2946851E2993270680F984 /* Pods-SentryOSX.debug.xcconfig */,
+				E0D4D9F44382CAF327EE2095 /* Pods-SentryOSX.release.xcconfig */,
+				532B8A9BBB9E1867A101D8DE /* Pods-SentryTVOS.debug.xcconfig */,
+				BC2F31F4126B54BCF7E6538A /* Pods-SentryTVOS.release.xcconfig */,
+				5C157564D9DBDB001D10B7D3 /* Pods-SentryWatchOS.debug.xcconfig */,
+				0451EDEFEC101CD587AB5FF9 /* Pods-SentryWatchOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CB93E00E1CBD6EAA008EF094 = {
+			isa = PBXGroup;
+			children = (
+				CB93E04A1CBD6F50008EF094 /* Source */,
+				CB93E0291CBD6ECB008EF094 /* SentryIOS */,
+				CB93E0361CBD6ED7008EF094 /* SentryOSX */,
+				CB93E0431CBD6EE4008EF094 /* SentryTVOS */,
+				CBF477AF1DB6ECF40065F306 /* SentryWatchOS */,
+				CB93E0191CBD6EAA008EF094 /* Products */,
+				FF11A6A9908EB1A8DC3CE6B0 /* Frameworks */,
+				47D20234359116B06CF59D6A /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		CB93E0191CBD6EAA008EF094 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CB93E0281CBD6ECB008EF094 /* SentryIOS.framework */,
+				CB93E0351CBD6ED7008EF094 /* SentryOSX.framework */,
+				CB93E0421CBD6EE4008EF094 /* SentryTVOS.framework */,
+				CB4BFCCF1CE51355001390C1 /* libSentry.a */,
+				CBF477AE1DB6ECF40065F306 /* SentryWatchOS.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CB93E0291CBD6ECB008EF094 /* SentryIOS */ = {
+			isa = PBXGroup;
+			children = (
+				CB93E02A1CBD6ECB008EF094 /* SentryIOS.h */,
+				CB93E02C1CBD6ECB008EF094 /* Info.plist */,
+			);
+			path = SentryIOS;
+			sourceTree = "<group>";
+		};
+		CB93E0361CBD6ED7008EF094 /* SentryOSX */ = {
+			isa = PBXGroup;
+			children = (
+				CB93E0371CBD6ED7008EF094 /* SentryOSX.h */,
+				CB93E0391CBD6ED7008EF094 /* Info.plist */,
+			);
+			path = SentryOSX;
+			sourceTree = "<group>";
+		};
+		CB93E0431CBD6EE4008EF094 /* SentryTVOS */ = {
+			isa = PBXGroup;
+			children = (
+				CB93E0441CBD6EE4008EF094 /* SentryTVOS.h */,
+				CB93E0461CBD6EE4008EF094 /* Info.plist */,
+			);
+			path = SentryTVOS;
+			sourceTree = "<group>";
+		};
+		CB93E04A1CBD6F50008EF094 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				CB93E04B1CBD6F50008EF094 /* KSCrashInstallationSentry.h */,
+				CB93E04C1CBD6F50008EF094 /* KSCrashInstallationSentry.m */,
+				CB93E04D1CBD6F50008EF094 /* KSCrashReportSinkSentry.h */,
+				CB93E04E1CBD6F50008EF094 /* KSCrashReportSinkSentry.m */,
+				CB93E04F1CBD6F50008EF094 /* Sentry.h */,
+				CB93E0501CBD6F50008EF094 /* Sentry.m */,
+				CB93E0511CBD6F50008EF094 /* SentryRequest.h */,
+				CB93E0521CBD6F50008EF094 /* SentryRequest.m */,
+				CB1F0CD01D340672007965BB /* ReportInterpreter.h */,
+				CB1F0CD11D340672007965BB /* ReportInterpreter.m */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		CBF477AF1DB6ECF40065F306 /* SentryWatchOS */ = {
+			isa = PBXGroup;
+			children = (
+				CBF477B01DB6ECF40065F306 /* SentryWatchOS.h */,
+				CBF477B11DB6ECF40065F306 /* Info.plist */,
+			);
+			path = SentryWatchOS;
+			sourceTree = "<group>";
+		};
+		FF11A6A9908EB1A8DC3CE6B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CB4BFCE11CE5140D001390C1 /* libPods-SentryIOS.a */,
+				0B52F0C1E3D4D60111C5298C /* libPods-Sentry.a */,
+				E7BDE44E0DD09DA88029405E /* libPods-SentryIOS.a */,
+				99EBEE0F650B569C912D1141 /* libPods-SentryOSX.a */,
+				918CB72C30450D7760CFA306 /* libPods-SentryTVOS.a */,
+				4D343EE149EB94D6B04F5238 /* libPods-SentryWatchOS.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		CB4BFCD81CE5137E001390C1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB4BFCDB1CE5138E001390C1 /* SentryRequest.h in Headers */,
+				CB1F0CD51D340672007965BB /* ReportInterpreter.h in Headers */,
+				CB4BFCDA1CE5138E001390C1 /* KSCrashReportSinkSentry.h in Headers */,
+				CB4BFCD91CE51386001390C1 /* KSCrashInstallationSentry.h in Headers */,
+				CB4BFCDC1CE51393001390C1 /* Sentry.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB93E0251CBD6ECB008EF094 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB93E0651CBD6F50008EF094 /* SentryRequest.h in Headers */,
+				CB1F0CD21D340672007965BB /* ReportInterpreter.h in Headers */,
+				CB93E02B1CBD6ECB008EF094 /* SentryIOS.h in Headers */,
+				CB93E0591CBD6F50008EF094 /* KSCrashReportSinkSentry.h in Headers */,
+				CB93E0531CBD6F50008EF094 /* KSCrashInstallationSentry.h in Headers */,
+				CB93E05F1CBD6F50008EF094 /* Sentry.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB93E0321CBD6ED7008EF094 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB93E0661CBD6F50008EF094 /* SentryRequest.h in Headers */,
+				CB1F0CD31D340672007965BB /* ReportInterpreter.h in Headers */,
+				CB93E0381CBD6ED7008EF094 /* SentryOSX.h in Headers */,
+				CB93E05A1CBD6F50008EF094 /* KSCrashReportSinkSentry.h in Headers */,
+				CB93E0541CBD6F50008EF094 /* KSCrashInstallationSentry.h in Headers */,
+				CB93E0601CBD6F50008EF094 /* Sentry.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB93E03F1CBD6EE4008EF094 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB93E0671CBD6F50008EF094 /* SentryRequest.h in Headers */,
+				CB1F0CD41D340672007965BB /* ReportInterpreter.h in Headers */,
+				CB93E0451CBD6EE4008EF094 /* SentryTVOS.h in Headers */,
+				CB93E05B1CBD6F50008EF094 /* KSCrashReportSinkSentry.h in Headers */,
+				CB93E0551CBD6F50008EF094 /* KSCrashInstallationSentry.h in Headers */,
+				CB93E0611CBD6F50008EF094 /* Sentry.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBF477AB1DB6ECF40065F306 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBF477BC1DB6ED5F0065F306 /* SentryRequest.h in Headers */,
+				CBF477BE1DB6ED670065F306 /* ReportInterpreter.h in Headers */,
+				CBF477B21DB6ECF40065F306 /* SentryWatchOS.h in Headers */,
+				CBF477B81DB6ED4D0065F306 /* KSCrashReportSinkSentry.h in Headers */,
+				CBF477B71DB6ED470065F306 /* KSCrashInstallationSentry.h in Headers */,
+				CBF477BA1DB6ED570065F306 /* Sentry.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		CB4BFCCE1CE51355001390C1 /* Sentry */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB4BFCD71CE51355001390C1 /* Build configuration list for PBXNativeTarget "Sentry" */;
+			buildPhases = (
+				E2EF6D2C9E40E904F5F05169 /* [CP] Check Pods Manifest.lock */,
+				CB4BFCCB1CE51355001390C1 /* Sources */,
+				CB4BFCCC1CE51355001390C1 /* Frameworks */,
+				CB4BFCCD1CE51355001390C1 /* CopyFiles */,
+				CB4BFCD81CE5137E001390C1 /* Headers */,
+				DAFD24CBF198CF85FDD22411 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Sentry;
+			productName = Sentry;
+			productReference = CB4BFCCF1CE51355001390C1 /* libSentry.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		CB93E0271CBD6ECB008EF094 /* SentryIOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB93E02D1CBD6ECB008EF094 /* Build configuration list for PBXNativeTarget "SentryIOS" */;
+			buildPhases = (
+				3950EE087F9098684F781EF5 /* [CP] Check Pods Manifest.lock */,
+				CB93E0231CBD6ECB008EF094 /* Sources */,
+				CB93E0241CBD6ECB008EF094 /* Frameworks */,
+				CB93E0251CBD6ECB008EF094 /* Headers */,
+				CB93E0261CBD6ECB008EF094 /* Resources */,
+				8BFB8D841960193DD139EDFD /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SentryIOS;
+			productName = SentryIOS;
+			productReference = CB93E0281CBD6ECB008EF094 /* SentryIOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CB93E0341CBD6ED7008EF094 /* SentryOSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB93E03A1CBD6ED7008EF094 /* Build configuration list for PBXNativeTarget "SentryOSX" */;
+			buildPhases = (
+				DFB18E69E37B6D0D36AF71C4 /* [CP] Check Pods Manifest.lock */,
+				CB93E0301CBD6ED7008EF094 /* Sources */,
+				CB93E0311CBD6ED7008EF094 /* Frameworks */,
+				CB93E0321CBD6ED7008EF094 /* Headers */,
+				CB93E0331CBD6ED7008EF094 /* Resources */,
+				B8124EECEF3CC4D6A5116DCA /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SentryOSX;
+			productName = SentryOSX;
+			productReference = CB93E0351CBD6ED7008EF094 /* SentryOSX.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CB93E0411CBD6EE4008EF094 /* SentryTVOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB93E0471CBD6EE4008EF094 /* Build configuration list for PBXNativeTarget "SentryTVOS" */;
+			buildPhases = (
+				E8088275D250932677242D9D /* [CP] Check Pods Manifest.lock */,
+				CB93E03D1CBD6EE4008EF094 /* Sources */,
+				CB93E03E1CBD6EE4008EF094 /* Frameworks */,
+				CB93E03F1CBD6EE4008EF094 /* Headers */,
+				CB93E0401CBD6EE4008EF094 /* Resources */,
+				774AFCE562C88AF7E138FB34 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SentryTVOS;
+			productName = SentryTVOS;
+			productReference = CB93E0421CBD6EE4008EF094 /* SentryTVOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CBF477AD1DB6ECF40065F306 /* SentryWatchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CBF477B31DB6ECF40065F306 /* Build configuration list for PBXNativeTarget "SentryWatchOS" */;
+			buildPhases = (
+				54E581762C56EDCB7DCF76C4 /* [CP] Check Pods Manifest.lock */,
+				CBF477A91DB6ECF40065F306 /* Sources */,
+				CBF477AA1DB6ECF40065F306 /* Frameworks */,
+				CBF477AB1DB6ECF40065F306 /* Headers */,
+				CBF477AC1DB6ECF40065F306 /* Resources */,
+				232621D1333492380853D444 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SentryWatchOS;
+			productName = SentryWatchOS;
+			productReference = CBF477AE1DB6ECF40065F306 /* SentryWatchOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CB93E00F1CBD6EAA008EF094 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Karl Stenerud";
+				TargetAttributes = {
+					CB4BFCCE1CE51355001390C1 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					CB93E0271CBD6ECB008EF094 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					CB93E0341CBD6ED7008EF094 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					CB93E0411CBD6EE4008EF094 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					CBF477AD1DB6ECF40065F306 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = CB93E0121CBD6EAA008EF094 /* Build configuration list for PBXProject "Sentry" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CB93E00E1CBD6EAA008EF094;
+			productRefGroup = CB93E0191CBD6EAA008EF094 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CB93E0271CBD6ECB008EF094 /* SentryIOS */,
+				CB93E0341CBD6ED7008EF094 /* SentryOSX */,
+				CB93E0411CBD6EE4008EF094 /* SentryTVOS */,
+				CBF477AD1DB6ECF40065F306 /* SentryWatchOS */,
+				CB4BFCCE1CE51355001390C1 /* Sentry */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CB93E0261CBD6ECB008EF094 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB93E0331CBD6ED7008EF094 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB93E0401CBD6EE4008EF094 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBF477AC1DB6ECF40065F306 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		232621D1333492380853D444 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SentryWatchOS/Pods-SentryWatchOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3950EE087F9098684F781EF5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		54E581762C56EDCB7DCF76C4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		774AFCE562C88AF7E138FB34 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SentryTVOS/Pods-SentryTVOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8BFB8D841960193DD139EDFD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SentryIOS/Pods-SentryIOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8124EECEF3CC4D6A5116DCA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SentryOSX/Pods-SentryOSX-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DAFD24CBF198CF85FDD22411 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sentry/Pods-Sentry-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DFB18E69E37B6D0D36AF71C4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E2EF6D2C9E40E904F5F05169 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E8088275D250932677242D9D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CB4BFCCB1CE51355001390C1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB4BFCE01CE5139A001390C1 /* SentryRequest.m in Sources */,
+				CB1F0CD91D340672007965BB /* ReportInterpreter.m in Sources */,
+				CB4BFCDF1CE5139A001390C1 /* Sentry.m in Sources */,
+				CB4BFCDD1CE5139A001390C1 /* KSCrashInstallationSentry.m in Sources */,
+				CB4BFCDE1CE5139A001390C1 /* KSCrashReportSinkSentry.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB93E0231CBD6ECB008EF094 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB93E0681CBD6F50008EF094 /* SentryRequest.m in Sources */,
+				CB1F0CD61D340672007965BB /* ReportInterpreter.m in Sources */,
+				CB93E0561CBD6F50008EF094 /* KSCrashInstallationSentry.m in Sources */,
+				CB93E0621CBD6F50008EF094 /* Sentry.m in Sources */,
+				CB93E05C1CBD6F50008EF094 /* KSCrashReportSinkSentry.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB93E0301CBD6ED7008EF094 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB93E0691CBD6F50008EF094 /* SentryRequest.m in Sources */,
+				CB1F0CD71D340672007965BB /* ReportInterpreter.m in Sources */,
+				CB93E0571CBD6F50008EF094 /* KSCrashInstallationSentry.m in Sources */,
+				CB93E0631CBD6F50008EF094 /* Sentry.m in Sources */,
+				CB93E05D1CBD6F50008EF094 /* KSCrashReportSinkSentry.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB93E03D1CBD6EE4008EF094 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB93E06A1CBD6F50008EF094 /* SentryRequest.m in Sources */,
+				CB1F0CD81D340672007965BB /* ReportInterpreter.m in Sources */,
+				CB93E0581CBD6F50008EF094 /* KSCrashInstallationSentry.m in Sources */,
+				CB93E0641CBD6F50008EF094 /* Sentry.m in Sources */,
+				CB93E05E1CBD6F50008EF094 /* KSCrashReportSinkSentry.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBF477A91DB6ECF40065F306 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBF477BD1DB6ED640065F306 /* SentryRequest.m in Sources */,
+				CBF477BF1DB6ED6D0065F306 /* ReportInterpreter.m in Sources */,
+				CBF477B61DB6ED440065F306 /* KSCrashInstallationSentry.m in Sources */,
+				CBF477BB1DB6ED5C0065F306 /* Sentry.m in Sources */,
+				CBF477B91DB6ED530065F306 /* KSCrashReportSinkSentry.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CB4BFCD51CE51355001390C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2AAB8703C40FE0BAA2E8544C /* Pods-Sentry.debug.xcconfig */;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		CB4BFCD61CE51355001390C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6369E76186C9D846E0B00DB6 /* Pods-Sentry.release.xcconfig */;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		CB93E01E1CBD6EAA008EF094 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_CXX0X_EXTENSIONS = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_EXPLICIT_OWNERSHIP_TYPE = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CLANG_WARN__EXIT_TIME_DESTRUCTORS = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = YES;
+				GCC_WARN_HIDDEN_VIRTUAL_FUNCTIONS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = YES;
+				GCC_WARN_PEDANTIC = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_STRICT_SELECTOR_MATCH = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_PARAMETER = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CB93E01F1CBD6EAA008EF094 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_CXX0X_EXTENSIONS = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_EXPLICIT_OWNERSHIP_TYPE = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CLANG_WARN__EXIT_TIME_DESTRUCTORS = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = YES;
+				GCC_WARN_HIDDEN_VIRTUAL_FUNCTIONS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = YES;
+				GCC_WARN_PEDANTIC = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_STRICT_SELECTOR_MATCH = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_PARAMETER = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CB93E02E1CBD6ECB008EF094 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED965AA7983A21895C38D1BE /* Pods-SentryIOS.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SentryIOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.getsentry.SentryIOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		CB93E02F1CBD6ECB008EF094 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2453A237B5219284D2D3AB35 /* Pods-SentryIOS.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SentryIOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.getsentry.SentryIOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		CB93E03B1CBD6ED7008EF094 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F2946851E2993270680F984 /* Pods-SentryOSX.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = SentryOSX/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.getsentry.SentryOSX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		CB93E03C1CBD6ED7008EF094 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0D4D9F44382CAF327EE2095 /* Pods-SentryOSX.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = SentryOSX/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.getsentry.SentryOSX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		CB93E0481CBD6EE4008EF094 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 532B8A9BBB9E1867A101D8DE /* Pods-SentryTVOS.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SentryTVOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.getsentry.SentryTVOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Debug;
+		};
+		CB93E0491CBD6EE4008EF094 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC2F31F4126B54BCF7E6538A /* Pods-SentryTVOS.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SentryTVOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.getsentry.SentryTVOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Release;
+		};
+		CBF477B41DB6ECF40065F306 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C157564D9DBDB001D10B7D3 /* Pods-SentryWatchOS.debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SentryWatchOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.getsentry.SentryWatchOS.SentryWatchOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Debug;
+		};
+		CBF477B51DB6ECF40065F306 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0451EDEFEC101CD587AB5FF9 /* Pods-SentryWatchOS.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SentryWatchOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.getsentry.SentryWatchOS.SentryWatchOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CB4BFCD71CE51355001390C1 /* Build configuration list for PBXNativeTarget "Sentry" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB4BFCD51CE51355001390C1 /* Debug */,
+				CB4BFCD61CE51355001390C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB93E0121CBD6EAA008EF094 /* Build configuration list for PBXProject "Sentry" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB93E01E1CBD6EAA008EF094 /* Debug */,
+				CB93E01F1CBD6EAA008EF094 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB93E02D1CBD6ECB008EF094 /* Build configuration list for PBXNativeTarget "SentryIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB93E02E1CBD6ECB008EF094 /* Debug */,
+				CB93E02F1CBD6ECB008EF094 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB93E03A1CBD6ED7008EF094 /* Build configuration list for PBXNativeTarget "SentryOSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB93E03B1CBD6ED7008EF094 /* Debug */,
+				CB93E03C1CBD6ED7008EF094 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB93E0471CBD6EE4008EF094 /* Build configuration list for PBXNativeTarget "SentryTVOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB93E0481CBD6EE4008EF094 /* Debug */,
+				CB93E0491CBD6EE4008EF094 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CBF477B31DB6ECF40065F306 /* Build configuration list for PBXNativeTarget "SentryWatchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBF477B41DB6ECF40065F306 /* Debug */,
+				CBF477B51DB6ECF40065F306 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CB93E00F1CBD6EAA008EF094 /* Project object */;
+}

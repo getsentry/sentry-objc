@@ -7,8 +7,7 @@
 
 #import "Sentry.h"
 #import "KSCrashInstallationSentry.h"
-#import "KSCrashAdvanced.h"
-#import "RFC3339DateTool.h"
+#import "KSCrash.h"
 #import "SentryRequest.h"
 
 
@@ -33,7 +32,7 @@ static void onCrash(const KSCrashReportWriter* writer)
         for(int i = lowestEventIndex; i <= lastBreadcrumbIndex; i++)
         {
             sprintf(breadcrumbFilenameIndexPtr, "%d", i);
-            writer->addJSONFileElement(writer, NULL, breadcrumbFilenameBuffer);
+            writer->addJSONFileElement(writer, NULL, breadcrumbFilenameBuffer, YES);
         }
         writer->endContainer(writer);
     }
@@ -127,10 +126,14 @@ static NSMutableDictionary* userInfo;
     {
         category = @"unknown";
     }
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setLocale:[NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"]];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss.SSS ZZZ"];
 
+    
     NSError *error = nil;
     NSMutableDictionary *jsonDict = [NSMutableDictionary new];
-    jsonDict[@"timestamp"] = [RFC3339DateTool stringFromDate:[NSDate new]];
+    jsonDict[@"timestamp"] = [formatter stringFromDate:[NSDate new]];
     jsonDict[@"category"] = category;
     if(level != nil)
     {
@@ -233,7 +236,9 @@ static NSMutableDictionary* userInfo;
                                           language:platform
                                        lineOfCode:lineOfCode
                                        stackTrace:stackTrace
-                                 terminateProgram:terminateProgram];
+                                    logAllThreads:NO
+                                 terminateProgram:terminateProgram
+                                ];
 
     // If the app didn't terminate, send this crash report.
     [Sentry sendQueuedEvents];

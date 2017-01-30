@@ -20,7 +20,7 @@
 
 - (NSDictionary *)stackTraceForThreadIndex:(NSInteger)threadIndex showRegisters:(BOOL)showRegisters;
 - (NSDictionary *)crashedThread;
-- (NSMutableArray *)stackFramesForThreadIndex:(NSInteger)threadIndex showRegisters:(BOOL)showRegisters;
+- (NSMutableArray *)stackFramesForThreadIndex:(NSInteger)threadIndex;
 - (NSDictionary *)makeExceptionInterfaceWithType:(NSString *)type
                                            value:(NSString *)value
                                       stackTrace:(NSDictionary *)stackTrace;
@@ -111,7 +111,7 @@
 
 - (NSMutableArray *)systemStacktrace
 {
-    NSArray *stackFrames = [self stackFramesForThreadIndex:self.crashedThreadIndex showRegisters:YES];
+    NSArray *stackFrames = [self stackFramesForThreadIndex:self.crashedThreadIndex];
     NSMutableArray *stackTrace = [NSMutableArray new];
     for(NSDictionary *frame in stackFrames)
     {
@@ -232,7 +232,7 @@ static inline NSString *hexAddress(NSNumber *value)
     result[@"family"] = self.family;
     result[@"model"] = self.model;
     result[@"model_id"] = self.modelID;
-    result[@"architecture"] = self.systemContext[@"cpu_arch"];
+    result[@"arch"] = self.systemContext[@"cpu_arch"];
     result[@"battery_level"] = self.batteryLevel;
     result[@"orientation"] = self.orientation;
     return result;
@@ -266,7 +266,7 @@ static inline NSString *hexAddress(NSNumber *value)
 - (NSDictionary *) registersForThreadIndex:(NSInteger)threadIndex
 {
     NSDictionary *thread = self.threads[(NSUInteger)threadIndex];
-    return thread[@"registers"];
+    return thread[@"registers"][@"basic"];
 }
 
 - (NSDictionary *)binaryImageForAddress:(uintptr_t) address
@@ -289,7 +289,7 @@ static inline NSString *hexAddress(NSNumber *value)
     NSDictionary *thread = self.threads[(NSUInteger)threadIndex];
     if(includeStacktrace)
     {
-        result[@"stacktrace"] = [self stackTraceForThreadIndex:threadIndex showRegisters:NO];
+        result[@"stacktrace"] = [self stackTraceForThreadIndex:threadIndex showRegisters:YES];
     }
     result[@"id"] = thread[@"index"];
     result[@"crashed"] = thread[@"crashed"];
@@ -302,7 +302,7 @@ static inline NSString *hexAddress(NSNumber *value)
     return result;
 }
 
-- (NSDictionary *)stackFrameAtIndex:(NSInteger)frameIndex inThreadIndex:(NSInteger)threadIndex showRegisters:(BOOL)showRegisters
+- (NSDictionary *)stackFrameAtIndex:(NSInteger)frameIndex inThreadIndex:(NSInteger)threadIndex
 {
     NSDictionary *frame = [self rawStackTraceForThreadIndex:threadIndex][(NSUInteger)frameIndex];
     uintptr_t instructionAddress = (uintptr_t)[frame[@"instruction_addr"] unsignedLongLongValue];
@@ -321,14 +321,11 @@ static inline NSString *hexAddress(NSNumber *value)
     result[@"instruction_addr"] = hexAddress(frame[@"instruction_addr"]);
     result[@"symbol_addr"] = hexAddress(frame[@"symbol_addr"]);
     result[@"in_app"] = [NSNumber numberWithBool:isAppImage];
-    if(showRegisters)
-    {
-        result[@"vars"] = [self registersForThreadIndex:threadIndex];
-    }
+
     return result;
 }
 
-- (NSMutableArray *)stackFramesForThreadIndex:(NSInteger)threadIndex showRegisters:(BOOL)showRegisters
+- (NSMutableArray *)stackFramesForThreadIndex:(NSInteger)threadIndex
 {
     int frameCount = (int)[self rawStackTraceForThreadIndex:threadIndex].count;
     if(frameCount <= 0)
@@ -339,15 +336,14 @@ static inline NSString *hexAddress(NSNumber *value)
     NSMutableArray *frames = [NSMutableArray arrayWithCapacity:(NSUInteger)frameCount];
     for(NSInteger i = frameCount - 1; i >= 0; i--)
     {
-        [frames addObject:[self stackFrameAtIndex:i inThreadIndex:threadIndex showRegisters:showRegisters]];
-        showRegisters = NO;
+        [frames addObject:[self stackFrameAtIndex:i inThreadIndex:threadIndex]];
     }
     return frames;
 }
 
 - (NSDictionary *)stackTraceForThreadIndex:(NSInteger)threadIndex showRegisters:(BOOL)showRegisters
 {
-    NSArray *frames = [self stackFramesForThreadIndex:threadIndex showRegisters:showRegisters];
+    NSArray *frames = [self stackFramesForThreadIndex:threadIndex];
     if(frames == nil)
     {
         return nil;
@@ -359,6 +355,12 @@ static inline NSString *hexAddress(NSNumber *value)
     {
         result[@"frames_omitted"] = @[@"1", [NSString stringWithFormat:@"%d", skipped + 1]];
     }
+    
+    if(showRegisters)
+    {
+        result[@"registers"] = [self registersForThreadIndex:threadIndex];
+    }
+    
     return result;
 }
 
