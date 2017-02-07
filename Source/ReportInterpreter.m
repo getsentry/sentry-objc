@@ -235,6 +235,26 @@ static inline NSString *hexAddress(NSNumber *value)
     result[@"arch"] = self.systemContext[@"cpu_arch"];
     result[@"battery_level"] = self.batteryLevel;
     result[@"orientation"] = self.orientation;
+    if ([self.systemContext objectForKeyPath:@"memory/free"])
+    {
+        long free_memory = [[self.systemContext objectForKeyPath:@"memory/free"] longValue];
+        result[@"free_memory"] = [NSByteCountFormatter stringFromByteCount:free_memory countStyle:NSByteCountFormatterCountStyleMemory];
+    }
+    if ([self.systemContext objectForKeyPath:@"memory/size"])
+    {
+        long memory_size = [[self.systemContext objectForKeyPath:@"memory/size"] longValue];
+        result[@"memory_size"] = [NSByteCountFormatter stringFromByteCount:memory_size countStyle:NSByteCountFormatterCountStyleMemory];
+    }
+    if (self.systemContext[@"storage"])
+    {
+        long storage_size = [self.systemContext[@"storage"] longValue];
+        result[@"storage_size"] = [NSByteCountFormatter stringFromByteCount:storage_size countStyle:NSByteCountFormatterCountStyleMemory];
+    }
+    if ([self.systemContext objectForKeyPath: @"memory/usable"])
+    {
+        long usable_memory = [[self.systemContext objectForKeyPath: @"memory/usable"] longValue];
+        result[@"usable_memory"] = [NSByteCountFormatter stringFromByteCount:usable_memory countStyle:NSByteCountFormatterCountStyleMemory];
+    }
     return result;
 }
 
