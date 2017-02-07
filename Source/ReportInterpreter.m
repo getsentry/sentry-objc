@@ -472,7 +472,7 @@ static inline NSString *hexAddress(NSNumber *value)
     attributes[@"tags"] = [self.report objectForKeyPath:@"user/tags"];
     attributes[@"extra"] = [self.report objectForKeyPath:@"user/extra"];
     attributes[@"fingerprint"] = [self.report objectForKeyPath:@"user/fingerprint"];
-    attributes[@"user"] = [self.report objectForKeyPath:@"user/user"];
+    attributes[@"user"] = [self.report objectForKeyPath:@"user/sentry_user"];
 
     return attributes;
 }
