@@ -1,9 +1,9 @@
 Sentry Objective-C  Client
 ==================
 
-***Please consider using our [Swift Client](https://github.com/getsentry/sentry-swift) this repo is only maintained for iOS Version < 8.0.
+***Please consider using our [Swift Client](https://github.com/getsentry/sentry-swift) this repo is only maintained for iOS Version < 8.0.***
 
-The Swift Client will also work with Objective-C projects.***
+***The Swift Client will also work with Objective-C projects.***
 
 Installation
 ------------
