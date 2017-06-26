@@ -1,9 +1,9 @@
 Sentry Objective-C  Client
 ==================
 
-***Please consider using our [Swift Client](https://github.com/getsentry/sentry-swift) this repo is only maintained for iOS Version < 8.0.***
+### Deprecated
 
-***The Swift Client will also work with Objective-C projects.***
+This SDK is deprecated. Use [sentry-cocoa](https://github.com/getsentry/sentry-cocoa).
 
 Installation
 ------------
